@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".crear.BienvenidoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/naranja"
+        android:gravity="center">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivBienvenidoImagen"
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:src="@drawable/img_verificacion"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="ContentDescription"/>
+
+            <TextView
+                android:id="@+id/tvBienvenidoTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textColor="@android:color/white"
+                android:fontFamily="@font/font_nunito_black"
+                android:textSize="28sp"
+                android:text="@string/bienvenido_title"
+                app:layout_constraintTop_toBottomOf="@+id/ivBienvenidoImagen"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/tvBienvenidoMensaje"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/white"
+                android:fontFamily="@font/font_nunito_light"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:text="@string/bienvenido_msg"
+                android:layout_marginTop="15dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvBienvenidoTitulo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <Button
+                android:id="@+id/btnBienvenidoEmpecemos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/round_corner_blanco"
+                android:textColor="@color/naranja"
+                android:fontFamily="@font/font_nunito_extrabold"
+                android:textSize="16sp"
+                android:textAllCaps="false"
+                android:text="@string/bienvenido_button_empezar"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="100dp"
+                android:layout_marginEnd="100dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvBienvenidoMensaje"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</layout>

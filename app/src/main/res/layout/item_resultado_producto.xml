@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        android:background="@android:color/white">
+        
+        <ImageView
+            android:id="@+id/ivItemResultadoImagen"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/img_barrilito"
+            android:background="@drawable/round_corner_gris"
+            android:padding="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tvItemResultadoNombre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:fontFamily="@font/font_nunito_black"
+            android:textSize="14sp"
+            android:text="Paq. 2 aguas Bonafont"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivItemResultadoImagen"
+            app:layout_constraintEnd_toStartOf="@+id/tvResultadoPrecio"/>
+
+        <TextView
+            android:id="@+id/tvItemResultadoCantidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:fontFamily="@font/nunito_semibold"
+            android:textSize="12sp"
+            android:text="500ml."
+            app:layout_constraintTop_toBottomOf="@+id/tvItemResultadoNombre"
+            app:layout_constraintStart_toStartOf="@+id/tvItemResultadoNombre"/>
+
+        <TextView
+            android:id="@+id/tvResultadoPrecio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/nunito_black"
+            android:textSize="18sp"
+            android:text="$6"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:background="@drawable/round_corner_naranja"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvItemResultadoCantidad"
+            app:layout_constraintBottom_toBottomOf="@+id/tvItemResultadoCantidad"/>
+
+        <TextView
+            android:id="@+id/tvItemResultadoNumero"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gris_obscuro"
+            android:fontFamily="@font/nunito_semibold"
+            android:textSize="12sp"
+            android:text="Cant: 1"
+            app:layout_constraintTop_toBottomOf="@+id/tvItemResultadoCantidad"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvItemResultadoNombre"/>
+
+        <TextView
+            android:id="@+id/tvItemResultadoID"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/gris_obscuro"
+            android:fontFamily="@font/nunito_semibold"
+            android:textSize="12sp"
+            android:text="787689675865"
+            android:layout_marginStart="80dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvItemResultadoCantidad"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvItemResultadoNombre"
+            app:layout_constraintEnd_toStartOf="@+id/tvResultadoPrecio"/>
+        
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

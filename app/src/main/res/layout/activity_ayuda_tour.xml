@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	tools:context=".main.menu.opciones.tour.AyudaTourActivity">
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@color/naranja">
+
+		<androidx.viewpager2.widget.ViewPager2
+			android:id="@+id/vpAyudaTourPager"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintBottom_toTopOf="@+id/llAyudaTourDots"/>
+
+		<LinearLayout
+			android:id="@+id/llAyudaTourDots"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:layout_marginBottom="30dp"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintBottom_toTopOf="@+id/btnAyudaTourSiguiente">
+
+			<ImageView
+				android:id="@+id/ivAyudaTour1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/ic_dot_enable"
+				tools:ignore="ContentDescription" />
+
+			<ImageView
+				android:id="@+id/ivAyudaTour2"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/ic_dot_disable"
+				android:layout_marginStart="10dp"
+				tools:ignore="ContentDescription" />
+
+			<ImageView
+				android:id="@+id/ivAyudaTour3"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/ic_dot_disable"
+				android:layout_marginStart="10dp"
+				tools:ignore="ContentDescription" />
+
+			<ImageView
+				android:id="@+id/ivAyudaTour4"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/ic_dot_disable"
+				android:layout_marginStart="10dp"
+				tools:ignore="ContentDescription" />
+
+		</LinearLayout>
+
+		<Button
+			android:id="@+id/btnAyudaTourSalir"
+			android:layout_width="120dp"
+			android:layout_height="wrap_content"
+			android:textColor="@android:color/white"
+			android:textSize="15sp"
+			android:fontFamily="@font/font_nunito_semibold"
+			android:text="@string/general_button_salir"
+			android:textAllCaps="false"
+			android:background="@drawable/round_corner_naranja_claro"
+			android:layout_marginEnd="10dp"
+			android:layout_marginBottom="20dp"
+			app:layout_constraintEnd_toStartOf="@+id/guidelineAyudaTour"
+			app:layout_constraintBottom_toBottomOf="parent" />
+
+		<Button
+			android:id="@+id/btnAyudaTourSiguiente"
+			android:layout_width="120dp"
+			android:layout_height="wrap_content"
+			android:textColor="@color/naranja"
+			android:textSize="16sp"
+			android:fontFamily="@font/font_nunito_extrabold"
+			android:text="@string/intro_btn_siguiente"
+			android:textAllCaps="false"
+			android:background="@drawable/round_corner_blanco"
+			android:layout_marginStart="10dp"
+			android:layout_marginBottom="20dp"
+			app:layout_constraintStart_toEndOf="@+id/guidelineAyudaTour"
+			app:layout_constraintBottom_toBottomOf="parent" />
+
+		<androidx.constraintlayout.widget.Guideline
+			android:id="@+id/guidelineAyudaTour"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			app:layout_constraintGuide_percent="0.5"/>
+
+		<Button
+			android:id="@+id/btnAyudaTourVale"
+			android:layout_width="140dp"
+			android:layout_height="wrap_content"
+			android:textColor="@color/naranja"
+			android:textSize="16sp"
+			android:fontFamily="@font/font_nunito_extrabold"
+			android:text="@string/general_button_vale"
+			android:textAllCaps="false"
+			android:background="@drawable/round_corner_blanco"
+			android:layout_marginStart="10dp"
+			android:layout_marginBottom="20dp"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintBottom_toBottomOf="parent"
+			android:visibility="gone"/>
+
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

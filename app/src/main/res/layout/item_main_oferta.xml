@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools">
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="300dp"
+		android:layout_height="120dp"
+		android:layout_marginStart="10dp"
+		android:layout_marginEnd="10dp">
+
+		<androidx.cardview.widget.CardView
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			app:cardCornerRadius="10dp"
+			app:cardElevation="0dp"
+			app:layout_constraintTop_toTopOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintEnd_toEndOf="parent">
+
+			<androidx.constraintlayout.widget.ConstraintLayout
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:background="@android:color/white">
+
+				<ImageView
+					android:id="@+id/ivItemOfertaImagen"
+					android:layout_width="105dp"
+					android:layout_height="match_parent"
+					android:scaleType="fitCenter"
+					android:src="@drawable/img_quaker"
+					android:background="@color/verde_fuerte"
+					android:padding="20dp"
+					app:layout_constraintStart_toStartOf="parent"
+					app:layout_constraintTop_toTopOf="parent"
+					tools:ignore="ContentDescription"/>
+
+				<androidx.constraintlayout.widget.ConstraintLayout
+					android:id="@+id/clItemOfertaDescripcion"
+					android:layout_width="0dp"
+					android:layout_height="0dp"
+					app:layout_constraintStart_toEndOf="@+id/ivItemOfertaImagen"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toTopOf="parent"
+					app:layout_constraintBottom_toBottomOf="@+id/ivItemOfertaImagen"/>
+
+				<androidx.constraintlayout.widget.ConstraintLayout
+					android:layout_width="0dp"
+					android:layout_height="0dp"
+					android:padding="5dp"
+					app:layout_constraintStart_toEndOf="@+id/ivItemOfertaImagen"
+					app:layout_constraintEnd_toEndOf="parent"
+					app:layout_constraintTop_toTopOf="parent"
+					app:layout_constraintBottom_toBottomOf="@+id/ivItemOfertaImagen">
+
+					<TextView
+						android:id="@+id/tvItemOfertaNombre"
+						android:layout_width="0dp"
+						android:layout_height="wrap_content"
+						android:textColor="@android:color/white"
+						android:fontFamily="@font/nunito_black"
+						android:textSize="18sp"
+						android:text="Aceite Quaker State"
+						app:layout_constraintTop_toTopOf="parent"
+						app:layout_constraintStart_toStartOf="parent"
+						app:layout_constraintEnd_toEndOf="parent"/>
+
+					<TextView
+						android:id="@+id/tvItemOfertaCantidad"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="@android:color/white"
+						android:fontFamily="@font/font_nunito_semibold"
+						android:textSize="12sp"
+						android:text="946ml."
+						app:layout_constraintTop_toBottomOf="@+id/tvItemOfertaNombre"
+						app:layout_constraintStart_toStartOf="parent"/>
+
+					<TextView
+						android:id="@+id/tvItemOfertaInfo"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="@android:color/white"
+						android:fontFamily="@font/font_nunito_semibold"
+						android:textSize="13sp"
+						android:text="@string/main_button_info"
+						android:background="@drawable/round_corner_alpha_20"
+						android:paddingStart="10dp"
+						android:paddingEnd="10dp"
+						android:paddingTop="5dp"
+						android:paddingBottom="5dp"
+						app:layout_constraintStart_toStartOf="parent"
+						app:layout_constraintTop_toTopOf="@+id/tvItemOfertaPrecio"
+						app:layout_constraintBottom_toBottomOf="@+id/tvItemOfertaPrecio"/>
+
+					<TextView
+						android:id="@+id/tvItemOfertaGana"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="@android:color/white"
+						android:fontFamily="@font/font_nunito_semibold"
+						android:textSize="13sp"
+						android:text="@string/main_msg_gana"
+						android:layout_marginEnd="10dp"
+						app:layout_constraintEnd_toStartOf="@+id/tvItemOfertaPrecio"
+						app:layout_constraintTop_toTopOf="@+id/tvItemOfertaPrecio"
+						app:layout_constraintBottom_toBottomOf="@+id/tvItemOfertaPrecio"/>
+
+					<TextView
+						android:id="@+id/tvItemOfertaPrecio"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="@android:color/white"
+						android:fontFamily="@font/nunito_black"
+						android:textSize="18sp"
+						android:text="$10"
+						android:background="@drawable/round_corner_rojo"
+						android:paddingStart="10dp"
+						android:paddingEnd="10dp"
+						app:layout_constraintBottom_toBottomOf="parent"
+						app:layout_constraintEnd_toEndOf="parent"/>
+
+				</androidx.constraintlayout.widget.ConstraintLayout>
+
+			</androidx.constraintlayout.widget.ConstraintLayout>
+
+		</androidx.cardview.widget.CardView>
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".recuperar.EnviadoActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/naranja">
+
+        <TextView
+            android:id="@+id/tvEnviadoTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/font_nunito_black"
+            android:textSize="32sp"
+            android:text="@string/recuperar_enviado_title"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvEnviadoMensaje"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/font_nunito_semibold"
+            android:textSize="21sp"
+            android:gravity="center"
+            android:text="@string/recuperar_enviado_msg"
+            app:layout_constraintTop_toBottomOf="@+id/tvEnviadoTitulo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageView
+            android:id="@+id/ivEnviadoImagen"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/img_circle_naranja"
+            android:layout_marginTop="32dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvEnviadoMensaje"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="ContentDescription"/>
+
+        <Button
+            android:id="@+id/btnEnviadoVale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_corner_blanco"
+            android:textColor="@color/naranja"
+            android:fontFamily="@font/font_nunito_extrabold"
+            android:textSize="17sp"
+            android:textAllCaps="false"
+            android:text="@string/general_button_vale"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="100dp"
+            app:layout_constraintTop_toBottomOf="@+id/ivEnviadoImagen"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <Button
+            android:id="@+id/btnEnviadoIr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_corner_naranja_claro"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/font_nunito_extrabold"
+            android:textSize="17sp"
+            android:textAllCaps="false"
+            android:text="@string/recuperar_button_ir"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="100dp"
+            app:layout_constraintTop_toBottomOf="@+id/btnEnviadoVale"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

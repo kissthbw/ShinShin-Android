@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".resultado.ResultadoListoActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/naranja">
+
+        <ImageView
+            android:id="@+id/ivResultadoListo"
+            android:layout_width="170dp"
+            android:layout_height="170dp"
+            android:src="@drawable/img_listo"
+            android:layout_marginTop="80dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tvresultadoListoTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font_nunito_black"
+            android:textSize="30sp"
+            android:textColor="@android:color/white"
+            android:text="@string/listo_title"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/ivResultadoListo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvResultadoListoSaldo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font_nunito_semibold"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:text="@string/listo_msg_sumaste"
+            android:gravity="center"
+            android:layout_marginTop="18dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvresultadoListoTitulo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <Button
+            android:id="@+id/btnResultadoListoVale"
+            android:layout_width="178dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/naranja"
+            android:fontFamily="@font/font_nunito_extrabold"
+            android:textSize="16sp"
+            android:text="@string/general_button_vale"
+            android:textAllCaps="false"
+            android:background="@drawable/round_corner_blanco"
+            android:layout_marginTop="25dp"
+            app:layout_constraintTop_toBottomOf="@+id/tvResultadoListoSaldo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

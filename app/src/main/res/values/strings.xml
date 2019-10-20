@@ -1,0 +1,367 @@
+<resources>
+    <!--**************** General ****************-->
+    <string name="app_name">Shing Shing</string>
+    <string name="app_name_two">Shing\nShing</string>
+
+    <string name="general_button_privacidad">Privacidad</string>
+    <string name="general_button_politica_privacidad">Politica de privacidad</string>
+    <string name="general_button_terminos">Terminos y Condiciones</string>
+    <string name="general_button_enviar">Enviar</string>
+    <string name="general_button_vale">Vale</string>
+    <string name="general_button_guardar">Guardar</string>
+    <string name="general_button_eliminar">Eliminar</string>
+    <string name="general_button_si_eliminar">Si, Eliminar</string>
+    <string name="general_button_cancelar">Cancelar</string>
+    <string name="general_button_aceptar">Aceptar</string>
+    <string name="general_button_salir">Salir</string>
+    <string name="general_msg_acepto">Acepto</string>
+    <string name="general_msg_esperar">Por favor espere un momento...</string>
+
+    <!--**************** Login ****************-->
+    <string name="login_title_correo">Correo</string>
+    <string name="login_title_contrasena">Contraseña</string>
+    <string name="login_title_nuevo">Inicia sesión con</string>
+    <string name="login_title_crea">Crea una cuenta</string>
+    <string name="login_button_iniciar">Iniciar Sesión</string>
+    <string name="login_button_olvidar">Olvidé mi contraseña :(</string>
+    <string name="login_error_correo">Favor de ingresar un correo eléctronico valido</string>
+    <string name="login_error_contrasena">Favor de ingresar la contraseña</string>
+    <string name="login_error_servicio">Favor de validar el usuario y contraseña</string>
+
+    <!--**************** Intro ****************-->
+    <string name="intro_msg1">Bienvenido,\n¡ahora formas parte\nde Shing Shing!</string>
+    <string name="intro_msg2">Aquí recibirás $ por las\ncompras que hagas en tus\ntiendas de autoservicio favoritas.</string>
+    <string name="intro_msg3">Solo sube tus Tickets de\ncompra y comienza a ganar!</string>
+    <string name="intro_msg4">Puedes usar tu $ acumulado en\nuna Cuenta bancaria, PayPal o\nhacer una Recarga telefónica</string>
+    <string name="intro_btn_siguiente">Siguiente</string>
+    <string name="intro_btn_omitir">Omitir Intro</string>
+    <string name="intro_btn_listo">¡Lo tengo!</string>
+
+    <!--**************** Main ****************-->
+    <string name="main_title_primer">¡Has SHING SHING!</string>
+    <string name="main_title_subir">sube tu primer Ticket.</string>
+    <string name="main_title_popular">Populares</string>
+    <string name="main_title_departamento">Departamentos</string>
+    <string name="main_title_tienda">Tiendas</string>
+    <string name="main_msg_gana">Gana</string>
+    <string name="main_button_foto">Tomarle foto</string>
+    <string name="main_button_info">+ info</string>
+    <string name="main_button_todos">Ver todos</string>
+    <string name="main_msg_cuentanos">Cuéntanos,</string>
+    <string name="main_msg_anadir_producto">¿Qué producto te gustaría\nver en Shing Shing?</string>
+    <string name="main_error_producto">Favor de agregar un producto</string>
+    <string name="main_msg_producto_enviado">Producto enviado</string>
+
+    <!--**************** Recuperar ****************-->
+    <string name="recuperar_title">No te preocupes,</string>
+    <string name="recuperar_msg">te enviáremos un correo con un\nenlace para que la recuperes\ntu contraseña ;-)
+	</string>
+    <string name="recuperar_enviado_title">¡Correo enviado!</string>
+    <string name="recuperar_enviado_msg">Revisa tu bandeja de\nentrada y revisa el link\nque te enviamos.</string>
+    <string name="recuperar_button_ir">Ir a mi Correo</string>
+
+    <!--**************** Crear cuenta ****************-->
+    <string name="crear_title">Crea tu cuenta</string>
+    <string name="crear_msg">Estas a unos pasos de formar parte \nde la comunidad
+		<b>¡Shing Shing!</b>
+	</string>
+    <string name="crear_title_nombre">Nombre</string>
+    <string name="crear_title_confirmar_contra">Confirmar contraseña</string>
+    <string name="crear_title_telefono">Teléfono</string>
+    <string name="crear_title_confirmar">Confirma Teléfono</string>
+    <string name="crear_title_cumpleanos">Cumpleaños</string>
+    <string name="crear_title_sexo">Sexo</string>
+    <string name="crear_title_cp">Código Postal</string>
+    <string name="crear_msg_contrasena">Usa ocho carácteres como mínimo.\nTe recomendamos utilizar mayúsculas\ny
+		minúsculas.
+	</string>
+    <string name="crear_msg_mes">Mes</string>
+    <string name="crear_msg_dia">Día</string>
+    <string name="crear_msg_anio">Año</string>
+    <string name="crear_button_cuenta">Crear Cuenta</string>
+    <string name="crear_error_nombre">Favor de ingresar un nombre</string>
+    <string name="crear_error_correo">Favor de ingresar un correo eléctronico válido</string>
+    <string name="crear_error_contrasena1">Favor de ingresar una contrasena de mínimo ocho carácteres</string>
+    <string name="crear_error_contrasena2">Favor de confirmar la contraseña</string>
+    <string name="crear_error_contrasena3">Las contraseñas deben coincidir</string>
+    <string name="crear_error_contrasena4">Favor de llenar los otros campos de contraseñas</string>
+    <string name="crear_error_telefono">Favor de ingresar un número teléfonico válido</string>
+    <string name="crear_error_confirmar">Favor de confirmar el número teléfonico</string>
+    <string name="crear_error_coincidir">Los teléfonos deben coincidir</string>
+    <string name="crear_error_fecha">Favor de ingresar una fecha válida</string>
+    <string name="crear_error_cp">Favor de ingresar un código postal válido</string>
+    <string name="crear_error_tyc">Debes aceptar los terminos y condiciones</string>
+
+    <string name="msg_selecciona">Selecciona</string>
+
+    <string name="msg_femenino">Femenino</string>
+    <string name="msg_masculino">Masculino</string>
+    <string name="validar_title">Valida tu cuenta</string>
+
+    <!--**************** Validar ****************-->
+    <string name="validar_msg">Te enviámos un SMS a ****%s\ncon un código de verificación</string>
+    <string name="validar_subtitle">Código de validación</string>
+    <string name="validar_btn_validar">Validar</string>
+    <string name="validar_btn_enviar">Envíar de nuevo</string>
+    <string name="validar_error">Favor de ingresar un código válido</string>
+    <string name="bienvenido_title">¡Si, eres tu!</string>
+
+    <!--**************** Bienvenido ****************-->
+    <string name="bienvenido_msg">Es hora de subir todos tickets y\nganar dinero por tus compras.</string>
+    <string name="bienvenido_button_empezar">¡Empecemos!</string>
+    <string name="perfil_title">Perfil</string>
+
+    <!--**************** Perfil ****************-->
+    <string name="perfil_title_email">Email</string>
+    <string name="perfil_title_numero">Número</string>
+    <string name="perfil_button_eliminar">Eliminar Cuenta</string>
+    <string name="cuentas_title">Cuentas de retiro</string>
+    <string name="perfil_msg_cambio_contrasena">Cambio de contraseña</string>
+    <string name="perfil_msg_contrasena_actual">Contraseña actual</string>
+    <string name="perfil_msg_contrasena_nueva">Contraseña nueva</string>
+    <string name="perfil_msg_confirmar_contrasena">Confirmar tu contraseña nueva</string>
+
+    <!--**************** Cuentas ****************-->
+    <string name="cuentas_title_bancaria">Bancario</string>
+    <string name="cuentas_title_paypal">PayPal</string>
+    <string name="cuentas_title_recarga_uno">Recarga</string>
+    <string name="cuentas_title_recarga">Recarga Telefónica</string>
+    <string name="cuentas_button_cuenta">+ Cuenta</string>
+    <string name="cuentas_button_numero">+ Número</string>
+    <string name="ayuda_title">Ayuda</string>
+
+    <!--**************** Ayuda ****************-->
+    <string name="ayuda_title_tour">Tour por Shing Shing</string>
+    <string name="ayuda_title_preguntas">Preguntas Frecuentes</string>
+    <string name="contacto_title">Contacto</string>
+
+    <string name="ayuda_tour_msg1">Aquí tienes las secciones de\ntu Saldo, Notificaciones y\nMenú general.</string>
+    <string name="ayuda_tour_msg2">Puedes ver todos los\nproductos que te dan $ por\ncomprarlos.</string>
+    <string name="ayuda_tour_msg3">Con este botón activas la\ncámara y tomas la foto de tu\nTicket de compra.</string>
+    <string name="ayuda_tour_msg4">Puedes usar tu $ acumulado\nen una cuenta bancaria,\nPayPal o hacer una recarga\ntelefónica</string>
+
+    <!--**************** Contacto ****************-->
+    <string name="contacto_title_ayudarte">¿En qué podemos ayudarte?</string>
+    <string name="contacto_title_cuentanos">Cuéntanos más</string>
+    <string name="menu_msg_disponible">Disponible</string>
+    <string name="contacto_error_topico">Favor de ingresar un topico</string>
+    <string name="contacto_error_detalle">Favor de ingresar el detalle</string>
+    <string name="contacto_msg_enviado">Mensaje enviado</string>
+
+    <!--**************** Menu ****************-->
+    <string name="menu_button_retirar">Retirar</string>
+    <string name="menu_button_tickets">Tickets</string>
+    <string name="menu_button_historial">Historial</string>
+    <string name="menu_button_perfil">Perfil</string>
+    <string name="menu_button_cuentas">Cuentas de retiro</string>
+    <string name="menu_button_ayuda">Ayuda</string>
+    <string name="menu_button_contacto">Contacto</string>
+    <string name="menu_button_cerrar_sesion">Cerrar sesión</string>
+    <string name="nuevo_title_tarjeta">Nueva cuenta</string>
+
+    <!--**************** Nuevos ****************-->
+    <string name="nuevo_title_cuenta">Nueva cuenta</string>
+    <string name="nuevo_title_numero">Nuevo número</string>
+    <string name="nuevo_title_tipo_cuenta">Tipo de cuenta</string>
+    <string name="nuevo_title_banco_destino">Banco destino</string>
+    <string name="nuevo_title_nombre_corto">Nombre corto</string>
+    <string name="nuevo_title_no_tarjeta">No. de Tarjeta / Cuenta</string>
+    <string name="nuevo_title_tipo">Tipo</string>
+    <string name="nuevo_title_vencimiento">Vencimiento</string>
+    <string name="nuevo_msg_marcas">Marcas participantes:</string>
+    <string name="nuevo_title_id">ID</string>
+
+    <string name="nuevo_tarjeta_msg_titulo">Escanear tarjeta</string>
+    <string name="nuevo_tarjeta_msg_subtitulo">Coloque su tarjeta en el marco para que el número de la tarjeta sea visible</string>
+
+    <string name="nuevo_title_correo">Correo eléctronico</string>
+    <string name="nuevo_title_compania">Compañia</string>
+
+    <string name="nuevo_error_alias">Favor de ingresar un nombre corto</string>
+
+    <string name="nuevo_error_tarjeta">Favor de ingresar una tarjeta válida</string>
+    <string name="nuevo_error_cuenta">Favor de ingresar una cuenta válida</string>
+    <string name="nuevo_error_clabe">Favor de ingresar una CLABE válida</string>
+    <string name="nuevo_msg_agregar_tarjeta">De lujo, Tarjeta agregada.</string>
+
+    <string name="nuevo_msg_agregar_cuenta">De lujo, Cuenta agregada.</string>
+    <string name="nuevo_msg_agregar_numero">De lujo, Número agregado.</string>
+    <string name="nuevo_msg_actualizar">Cambios guardados</string>
+
+    <string name="nuevo_msg_eliminar_tarjeta">Eliminar tarjeta</string>
+
+    <string name="nuevo_msg_eliminar_cuenta">Eliminar cuenta</string>
+    <string name="nuevo_msg_eliminar_numero">Eliminar número</string>
+    <string name="nuevo_title_eliminar_tarjeta">¿Quieres eliminar esta Tarjeta?</string>
+
+    <string name="nuevo_title_eliminar_cuenta">¿Quieres eliminar esta Cuenta?</string>
+    <string name="nuevo_title_eliminar_numero">¿Quieres eliminar este Número?</string>
+    <string name="nuevo_subtitle_eliminar_medio">Para usarla de nuevo, la deberas \nvolver a agregar.</string>
+    <string name="nuevo_msg_eliminada_tarjeta">Aquí no paso nada. Tarjeta eliminada</string>
+
+    <string name="nuevo_msg_eliminada_cuenta">Aquí no paso nada. Cuenta eliminada</string>
+    <string name="nuevo_msg_eliminada_numero">Aquí no paso nada. Número eliminado</string>
+    <string name="opcion_eliminar_cuenta_title">¿En verdad quieres hacer esto?</string>
+
+    <string name="opcion_eliminar_cuenta_subtitle">En Shing Shing\nte vamos a extrañar :(</string>
+
+    <string name="eliminar_cuenta_title">Eliminar Cuenta</string>
+
+    <string name="eliminar_cuenta_subtitle">Al eliminar tu cuenta se borrarán tus Datos personales, Tickets, Historial y Saldo actual de tu cuenta.\n\nAyudanos a conocer el motivo de tu partida</string>
+
+    <!--**************** Eliminar ****************-->
+    <string name="eliminar_cuenta_motivo">Motivo</string>
+    <string name="eliminar_cuenta_comentarios">Comentarios</string>
+
+    <string name="eliminar_cuenta_regresar">Regresar a Shing Shing</string>
+    <string name="eliminar_cuenta_despedida">Las despedidas siempre\nson tristes, pero <b>confiamos\nque pronto estes de regreso\npor acá ;-)</b></string>
+    <string name="eliminar_cuenta_button_adios">¡Hasta Pronto!</string>
+    <string name="producto_gana">Gana</string>
+    <string name="producto_disponible">Disponible en</string>
+    <string name="resultado_btn_tomar_nuevo">Tomar de nuevo</string>
+    <string name="resultado_msg_super">Suuuuuper</string>
+
+    <!--**************** Producto ****************-->
+    <string name="resultado_msg_encontrar">Encontramos\ntodo esto en tu Ticket:</string>
+    <string name="resultado_title_tienda">Tienda</string>
+
+    <!--**************** Camara ****************-->
+    <string name="camara_btn_ok">OK</string>
+    <string name="camara_btn_borrar">Borrar</string>
+
+    <!--**************** Resultado ****************-->
+    <string name="resultado_title_ticket">Ticket</string>
+    <string name="resultado_title_productos">Productos</string>
+    <string name="resultado_msg_total">Gran total</string>
+    <string name="resultado_btn_enviar">Sumar a mi Cuenta</string>
+    <string name="listo_title">¡Listo!</string>
+    <string name="listo_msg_sumaste">Sumaste $%d\na tu saldo, ¡Sigue así!</string>
+    <string name="disponible_title_retiro">Retiro</string>
+    <string name="disponible_title_tickets">Tickets</string>
+
+    <!--**************** Listo ****************-->
+    <string name="disponible_title_historial">Historial</string>
+    <string name="retiro_recarga_title_numero">Número telefónico</string>
+
+    <!--**************** Disponible ****************-->
+    <string name="retiro_recarga_title_compania">Compañia</string>
+    <string name="retiro_msg_cuenta_destino">Cuenta destino</string>
+    <string name="retiro_btn_solicitar_retiro">Retirar</string>
+    <string name="retiro_btn_recargar">Recargar</string>
+
+    <!--**************** Retiro ****************-->
+    <string name="retiro_msg_saldo">Saldo</string>
+    <string name="retiro_msg_retiro">Retiro</string>
+    <string name="retiro_msg_agregar_cuenta">Agregar cuenta</string>
+    <string name="retiro_msg_agregar_numero">Agregar número</string>
+    <string name="retiro_msg_para">Para</string>
+
+    <string name="retiro_msg_agregar_cantidad">Favor de ingresar una cantidad</string>
+    <string name="retiro_error_retiro">La cantidad máxima a retirar es $500</string>
+
+    <string name="retiro_listo_cuenta_title">Recibimos\ntu $olicitud</string>
+    <string name="retiro_listo_cuenta_msg">En las próximas 24 hrs. verás\nreflejado el deposito en la\ncuenta que nos indicaste.</string>
+    <string name="retiro_listo_recarga_title">¡Recarga\nenviada!</string>
+    <string name="retiro_listo_recarga_msg">Recibirás un SMS de\nconfirmación en el teléfono\nque nos indicaste</string>
+
+    <string name="tickets_msg_sin_datos">Aun no tienes ningun\nTicket registrado :(</string>
+    <string name="tickets_msg_pregunta">¿Qué esperas?</string>
+    <string name="tickets_btn_subir">Subir Ticket</string>
+    <string name="historial_msg_tipo">Tipo</string>
+
+    <!--**************** Tickets ****************-->
+    <string name="historial_msg_fecha">Fecha</string>
+    <string name="historial_msg_cantidad">Cantidad</string>
+    <string name="historial_msg_estado">Estado</string>
+
+    <!--**************** Historial ****************-->
+    <string name="historial_msg_sin_datos">Aqui aparecerá el historial\nde tus retiros de dinero\n\nAun no tienes ningun\nmovimiento registrado :(</string>
+    <string name="ticketerror_title">¡Muy tarde!</string>
+    <string name="ticketerror_mensaje">Este ticket ya\nfue capturado antes. \n¡Intenta con otro!</string>
+    <string name="ticketerror_btn">Intentar con otro</string>
+    <string name="lentesucio_title">Uhmmm...</string>
+
+    <!--**************** Ticket error ****************-->
+    <string name="lentesucio_mensaje">Intentalo de nuevo, verifica\ntener buena iluminación y\nlimpio el lente de tu cámara</string>
+    <string name="lentesucio_btn">Intentar de nuevo</string>
+    <string name="privacidad_title">Privacidad</string>
+
+    <!--**************** Lente sucio ****************-->
+    <string name="privacidad_subtitle">En esta Política, se describe la información que tratamos para respaldar a Shing Shing. Debemos tratar tu información a fin de proporcionarte la app Shing Shing.</string>
+    <string name="privacidad_subtitle_dos">Lo que tú y otras personas hacen y proporcionan.</string>
+    <string name="privacidad_texto">Información y contenido que nos proporcionas. Recopilamos el contenido, las comunicaciones y otros datos que proporcionas cuando usas nuestros Productos. Por ejemplo, cuando te registras para crear una cuenta, creas o compartes contenido, y envías mensajes a otras personas o te comunicas con ellas. Esto puede incluir información en el contenido, o sobre él, que proporcionas (como los metadatos), por ejemplo, la ubicación de una foto o la fecha de creación de un archivo. También puede incluir el contenido que ves a través de las funciones que proporcionamos, como la cámara, para que podamos realizar acciones como sugerirte máscaras y filtros que quizá te gusten, así como darte consejos sobre cómo usar los formatos de cámara. Nuestros sistemas tratan automáticamente el contenido y las comunicaciones que tú y otras personas proporcionan para analizar el contexto y lo que incluyen en relación con los propósitos que se describen a continuación. Obtén más información sobre cómo controlar quién puede ver el contenido que compartes.
+        \n\nDatos con protecciones especiales: puedes optar por proporcionar información en los campos de tu perfil de Facebook o acontecimientos importantes relacionados con tus creencias religiosas, tus ideologías políticas, tus intereses o aspectos relacionados con tu salud. Esta y otra información (como el origen étnico o racial, las creencias filosóficas o la afiliación sindical) puede estar sujeta a protecciones especiales en virtud de las leyes de tu país.
+        \n\nRedes y conexiones. Recopilamos información sobre las personas, las páginas, las cuentas, los hashtags y los grupos a los que estás conectado y cómo interactúas con ellos a través de nuestros Productos, como las personas con las que más te comunicas o los grupos de los que formas parte. También recopilamos información de contacto si eliges subirla, sincronizarla o importarla desde un dispositivo (como una libreta de direcciones, un registro de llamadas o un historial de SMS), que usamos para fines como ayudarte a encontrar personas que quizá conoces y para otros fines que se describen a continuación.
+        \n\nTu uso. Recopilamos información sobre cómo usas nuestros Productos, como los tipos de contenido que ves o con los que interactúas, las funciones que utilizas, las acciones que llevas a cabo, las personas o cuentas con las que interactúas, y la hora, la frecuencia y la duración de tus actividades. Por ejemplo, registramos cuándo estás usando y cuándo usaste por última vez nuestros Productos, y qué publicaciones, videos y otro tipo de contenido ves en nuestros Productos. También recopilamos información sobre cómo usas funciones como nuestra cámara.
+        \n\nInformación sobre transacciones realizadas en nuestros Productos. Si usas nuestros Productos para efectuar compras u otras transacciones financieras (por ejemplo, cuando realizas una compra en un juego o haces una donación), recopilamos información sobre dicha compra o transacción. Esto incluye información de pago, como el número de tu tarjeta de crédito o débito y otra información sobre la tarjeta; otra información sobre la cuenta y la autenticación; y detalles de facturación, envío y contacto.</string>
+
+    <!--**************** Privacidad ****************-->
+    <string name="terminos_title">Terminos</string>
+    <string name="terminos_subtitle">En esta Política, se describe la información que tratamos para respaldar a Shing Shing. Debemos tratar tu información a fin de proporcionarte la app Shing Shing.</string>
+    <string name="terminos_subtitle_dos">Lo que tú y otras personas hacen y proporcionan.</string>
+    <string name="terminos_texto">Información y contenido que nos proporcionas. Recopilamos el contenido, las comunicaciones y otros datos que proporcionas cuando usas nuestros Productos. Por ejemplo, cuando te registras para crear una cuenta, creas o compartes contenido, y envías mensajes a otras personas o te comunicas con ellas. Esto puede incluir información en el contenido, o sobre él, que proporcionas (como los metadatos), por ejemplo, la ubicación de una foto o la fecha de creación de un archivo. También puede incluir el contenido que ves a través de las funciones que proporcionamos, como la cámara, para que podamos realizar acciones como sugerirte máscaras y filtros que quizá te gusten, así como darte consejos sobre cómo usar los formatos de cámara. Nuestros sistemas tratan automáticamente el contenido y las comunicaciones que tú y otras personas proporcionan para analizar el contexto y lo que incluyen en relación con los propósitos que se describen a continuación. Obtén más información sobre cómo controlar quién puede ver el contenido que compartes.
+        \n\nDatos con protecciones especiales: puedes optar por proporcionar información en los campos de tu perfil de Facebook o acontecimientos importantes relacionados con tus creencias religiosas, tus ideologías políticas, tus intereses o aspectos relacionados con tu salud. Esta y otra información (como el origen étnico o racial, las creencias filosóficas o la afiliación sindical) puede estar sujeta a protecciones especiales en virtud de las leyes de tu país.
+        \n\nRedes y conexiones. Recopilamos información sobre las personas, las páginas, las cuentas, los hashtags y los grupos a los que estás conectado y cómo interactúas con ellos a través de nuestros Productos, como las personas con las que más te comunicas o los grupos de los que formas parte. También recopilamos información de contacto si eliges subirla, sincronizarla o importarla desde un dispositivo (como una libreta de direcciones, un registro de llamadas o un historial de SMS), que usamos para fines como ayudarte a encontrar personas que quizá conoces y para otros fines que se describen a continuación.
+        \n\nTu uso. Recopilamos información sobre cómo usas nuestros Productos, como los tipos de contenido que ves o con los que interactúas, las funciones que utilizas, las acciones que llevas a cabo, las personas o cuentas con las que interactúas, y la hora, la frecuencia y la duración de tus actividades. Por ejemplo, registramos cuándo estás usando y cuándo usaste por última vez nuestros Productos, y qué publicaciones, videos y otro tipo de contenido ves en nuestros Productos. También recopilamos información sobre cómo usas funciones como nuestra cámara.
+        \n\nInformación sobre transacciones realizadas en nuestros Productos. Si usas nuestros Productos para efectuar compras u otras transacciones financieras (por ejemplo, cuando realizas una compra en un juego o haces una donación), recopilamos información sobre dicha compra o transacción. Esto incluye información de pago, como el número de tu tarjeta de crédito o débito y otra información sobre la tarjeta; otra información sobre la cuenta y la autenticación; y detalles de facturación, envío y contacto.</string>
+
+    <!--**************** Privacidad ****************-->
+    <string name="facebook_app_id">2357958394473404</string>
+    <string name="fb_login_protocol_scheme">fb2357958394473404</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="options_sexo">
+        <item>@string/msg_selecciona</item>
+        <item>@string/msg_femenino</item>
+        <item>@string/msg_masculino</item>
+    </string-array>
+
+    <string-array name="options_mes">
+        <item>01</item>
+        <item>02</item>
+        <item>03</item>
+        <item>04</item>
+        <item>05</item>
+        <item>06</item>
+        <item>07</item>
+        <item>08</item>
+        <item>09</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+    </string-array>
+    <string-array name="options_anio">
+        <item>2018</item>
+        <item>2019</item>
+        <item>2020</item>
+        <item>2021</item>
+        <item>2022</item>
+        <item>2023</item>
+        <item>2024</item>
+        <item>2025</item>
+        <item>2026</item>
+    </string-array>
+
+    <string-array name="options_telefono">
+        <item>TELCEL</item>
+        <item>MOVISTAR</item>
+        <item>AT&amp;T</item>
+    </string-array>
+
+    <string-array name="options_banco">
+        <item>BBVA</item>
+        <item>SANTANDER</item>
+        <item>BANCO AZTECA</item>
+        <item>SCOTIA BANK</item>
+        <item>HSBC</item>
+    </string-array>
+
+    <string-array name="options_recargas">
+        <item>$10</item>
+        <item>$20</item>
+        <item>$30</item>
+        <item>$50</item>
+        <item>$100</item>
+        <item>$200</item>
+        <item>$500</item>
+    </string-array>
+</resources>
