@@ -16,10 +16,12 @@ import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.squareup.picasso.Picasso;
 import com.supermarket.shingshing.R;
 import com.supermarket.shingshing.databinding.FragmentMenuBinding;
 import com.supermarket.shingshing.login.LoginActivity;
 import com.supermarket.shingshing.models.LoginModel;
+import com.supermarket.shingshing.models.UsuarioModel;
 import com.supermarket.shingshing.privacidad.PrivacidadActivity;
 import com.supermarket.shingshing.util.UserPreferences;
 import com.supermarket.shingshing.util.UsuarioSingleton;
@@ -60,12 +62,18 @@ public class MenuFragment extends Fragment {
     }
 
     private void iniciarVistas() {
+        UsuarioModel usuario = UsuarioSingleton.getUsuario();
+
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
         mGoogleSignInClient = GoogleSignIn.getClient(Objects.requireNonNull(getActivity()), gso);
 
-        binding.tvMenuSaldo.setText(String.format(Locale.US, "$ %d", UsuarioSingleton.getUsuario().getBonificacion()));
+        binding.tvMenuSaldo.setText(String.format(Locale.US, "$ %d", usuario.getBonificacion()));
+        if (usuario.getImgUrl() != null && !usuario.getImgUrl().trim().isEmpty()) {
+            binding.ivMenuPerfil.setPadding(0, 0, 0, 0);
+            Picasso.get().load(usuario.getImgUrl()).into(binding.ivMenuPerfil);
+        }
 
         binding.ivMenuCerrar.setOnClickListener(v -> listener.onClickMenuCerrar());
         binding.clMenuRetirar.setOnClickListener(v -> listener.onClickOpcionDisponible(OPCION_RETIRO));
@@ -77,7 +85,7 @@ public class MenuFragment extends Fragment {
         binding.clMenuOpcionContacto.setOnClickListener(v -> listener.onClickMenuItem(MENU_CONTACTO));
         binding.tvMenuPrivacidad.setOnClickListener(v -> getActivity().startActivity(new Intent(getActivity(), PrivacidadActivity.class)));
         binding.tvMenuCerrarSesion.setOnClickListener(v -> {
-            int tipo = UsuarioSingleton.getUsuario().getIdRedSocial();
+            int tipo = usuario.getIdRedSocial();
             if (tipo == 1) {
                 mGoogleSignInClient.signOut().addOnCompleteListener(getActivity(), task -> cerrarSesion());
             }

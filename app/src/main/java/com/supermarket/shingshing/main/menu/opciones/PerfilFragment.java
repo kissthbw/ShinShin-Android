@@ -161,6 +161,7 @@ public class PerfilFragment extends Fragment implements EliminarDialogListener, 
         }
 
         if (usuario.getImgUrl() != null && !usuario.getImgUrl().trim().isEmpty()) {
+            binding.ivPerfilImagen.setPadding(0, 0, 0, 0);
             Picasso.get().load(usuario.getImgUrl()).into(binding.ivPerfilImagen);
         }
     }

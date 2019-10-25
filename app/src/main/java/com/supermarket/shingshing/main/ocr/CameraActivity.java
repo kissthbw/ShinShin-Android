@@ -1,6 +1,7 @@
 package com.supermarket.shingshing.main.ocr;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 
 import android.content.Context;
@@ -14,6 +15,7 @@ import android.widget.ImageView;
 
 import com.supermarket.shingshing.R;
 import com.supermarket.shingshing.databinding.ActivityCameraBinding;
+import com.wonderkiln.camerakit.CameraKit;
 import com.wonderkiln.camerakit.CameraKitError;
 import com.wonderkiln.camerakit.CameraKitEvent;
 import com.wonderkiln.camerakit.CameraKitEventListener;
@@ -30,7 +32,9 @@ public class CameraActivity extends AppCompatActivity {
     private ActivityCameraBinding binding;
     private CameraView cameraView;
     private ImageView preview;
+    private View view;
     private int contador;
+    private boolean flash;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +45,10 @@ public class CameraActivity extends AppCompatActivity {
 
     private void iniciarVistas() {
         contador = 1;
+        flash = false;
         cameraView = binding.cvCamera;
         preview = binding.ivCameraPreview;
+        view = binding.vCameraOverlay;
 
         cameraView.addCameraKitListener(new CameraKitEventListener() {
             @Override
@@ -55,7 +61,8 @@ public class CameraActivity extends AppCompatActivity {
             public void onImage(CameraKitImage cameraKitImage) {
                 Bitmap bitmap = cameraKitImage.getBitmap();
                 bitmap = Bitmap.createScaledBitmap(bitmap, cameraView.getWidth(), cameraView.getHeight(), false);
-                mostrarCaptura(bitmap);
+                Bitmap scale = Bitmap.createBitmap(bitmap, view.getLeft(), view.getTop(), view.getWidth(), view.getHeight());
+                mostrarCaptura(scale);
             }
 
             @Override
@@ -66,6 +73,8 @@ public class CameraActivity extends AppCompatActivity {
             cameraView.start();
             cameraView.captureImage();
         });
+
+        binding.ivCameraFlash.setOnClickListener(v -> cambiarFlash());
 
         binding.tvCameraOk.setOnClickListener(v -> mostrarPreview());
 
@@ -126,9 +135,21 @@ public class CameraActivity extends AppCompatActivity {
         ContextWrapper cw = new ContextWrapper(getApplicationContext());
         File directory = cw.getDir("imagenes", Context.MODE_PRIVATE);
         String[] entries = directory.list();
-        for(String s: entries){
+        for (String s: entries) {
             File currentFile = new File(directory.getPath(), s);
             currentFile.delete();
+        }
+    }
+
+    private void cambiarFlash() {
+        if (flash) {
+            cameraView.setFlash(CameraKit.Constants.FLASH_OFF);
+            binding.ivCameraFlash.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_flash_white));
+            flash = false;
+        } else {
+            cameraView.setFlash(CameraKit.Constants.FLASH_ON);
+            binding.ivCameraFlash.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_flash_bold_white));
+            flash = true;
         }
     }
 }
