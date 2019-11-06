@@ -22,7 +22,6 @@ import com.supermarket.shingshing.models.MedioBonificacionModel;
 import com.supermarket.shingshing.network.ApiClient;
 import com.supermarket.shingshing.network.ApiService;
 import com.supermarket.shingshing.util.UsuarioSingleton;
-import com.supermarket.shingshing.util.UtilsView;
 
 import java.util.ArrayList;
 
@@ -67,7 +66,6 @@ public class RetiroFragment extends Fragment {
     }
 
     private void getMediosBonificacion() {
-        UtilsView.mostrarProgress(getContext(), getString(R.string.general_msg_esperar));
         JsonObject json = new JsonObject();
         json.addProperty("idUsuario", idUsuario);
 
@@ -76,7 +74,6 @@ public class RetiroFragment extends Fragment {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(result -> {
-                    UtilsView.esconderProgress();
                     for (ItemMedioBonificacionModel item : result.getMediosBonificacion()) {
                         switch (item.getNombreMedioBonificacion()) {
                             case "BANCARIA":
@@ -91,7 +88,6 @@ public class RetiroFragment extends Fragment {
                         }
                     }
                 }, throwable -> {
-                    UtilsView.esconderProgress();
                     Log.e(TAG, "Error medios bonificacion: " + throwable.getLocalizedMessage());
                 });
     }

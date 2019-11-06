@@ -21,7 +21,6 @@ import com.supermarket.shingshing.main.disponible.opciones.adapters.HistorialRet
 import com.supermarket.shingshing.network.ApiClient;
 import com.supermarket.shingshing.network.ApiService;
 import com.supermarket.shingshing.util.UsuarioSingleton;
-import com.supermarket.shingshing.util.UtilsView;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -43,7 +42,6 @@ public class HistorialRetiroFragment extends Fragment {
     }
 
     private void getHistorialRetiros() {
-        UtilsView.mostrarProgress(getContext(), getString(R.string.general_msg_esperar));
         JsonObject json = new JsonObject();
         json.addProperty("idUsuario", UsuarioSingleton.getUsuario().getIdUsuario());
 
@@ -52,7 +50,6 @@ public class HistorialRetiroFragment extends Fragment {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(result -> {
-                    UtilsView.esconderProgress();
                     if (result.getCode() == 200 && result.getHistoricoMediosBonificaciones() != null && result.getHistoricoMediosBonificaciones().size() > 0) {
                         binding.clHistorialSinDatos.setVisibility(View.GONE);
                         binding.clHistorialConDatos.setVisibility(View.VISIBLE);
@@ -61,7 +58,6 @@ public class HistorialRetiroFragment extends Fragment {
                         binding.rvHistorialProductos.setAdapter(new HistorialRetiroAdapter(result.getHistoricoMediosBonificaciones()));
                     }
                 }, throwable -> {
-                    UtilsView.esconderProgress();
                     Log.e(TAG, "Error historial retiros: " + throwable.getLocalizedMessage());
                 });
     }

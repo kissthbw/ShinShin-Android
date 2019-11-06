@@ -22,7 +22,6 @@ import com.supermarket.shingshing.main.disponible.opciones.adapters.HistorialTic
 import com.supermarket.shingshing.network.ApiClient;
 import com.supermarket.shingshing.network.ApiService;
 import com.supermarket.shingshing.util.UsuarioSingleton;
-import com.supermarket.shingshing.util.UtilsView;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -51,7 +50,6 @@ public class HistorialTicketFragment extends Fragment {
     }
 
     private void getHistorialTickets() {
-        UtilsView.mostrarProgress(getContext(), getString(R.string.general_msg_esperar));
         JsonObject json = new JsonObject();
         json.addProperty("idUsuario", UsuarioSingleton.getUsuario().getIdUsuario());
 
@@ -60,7 +58,6 @@ public class HistorialTicketFragment extends Fragment {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(result -> {
-                    UtilsView.esconderProgress();
                     if (result.getCode() == 200 && result.getTickets() != null && result.getTickets().size() > 0) {
                         binding.clTicketsSinDatos.setVisibility(View.GONE);
                         binding.clTicketsConDatos.setVisibility(View.VISIBLE);
@@ -69,7 +66,6 @@ public class HistorialTicketFragment extends Fragment {
                         binding.rvTicketsLista.setAdapter(new HistorialTicketAdapter(listener, result.getTickets()));
                     }
                 }, throwable -> {
-                    UtilsView.esconderProgress();
                     Log.e(TAG, "Error historial tickets: " + throwable.getLocalizedMessage());
                 });
     }
