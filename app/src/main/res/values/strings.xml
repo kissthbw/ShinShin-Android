@@ -38,8 +38,8 @@
     <string name="intro_btn_listo">¡Lo tengo!</string>
 
     <!--**************** Main ****************-->
-    <string name="main_title_primer">¡Has SHING SHING!</string>
-    <string name="main_title_subir">sube tu primer Ticket.</string>
+    <string name="main_title_primer">¡Has tu 1er SHING SHING!</string>
+    <string name="main_title_subir">y sube tu primer Ticket.</string>
     <string name="main_title_popular">Populares</string>
     <string name="main_title_departamento">Departamentos</string>
     <string name="main_title_tienda">Tiendas</string>

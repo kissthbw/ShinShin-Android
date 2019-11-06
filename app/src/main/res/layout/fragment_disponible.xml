@@ -17,7 +17,7 @@
             android:fontFamily="@font/font_nunito_semibold"
             android:textSize="16sp"
             android:text="@string/menu_msg_disponible"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="33dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
@@ -30,7 +30,6 @@
             android:fontFamily="@font/font_nunito_bold"
             android:textSize="30sp"
             android:text="$10,879.00"
-            android:layout_marginTop="5dp"
             app:layout_constraintTop_toBottomOf="@+id/tvDisponibleTitulo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
@@ -39,7 +38,7 @@
             android:id="@+id/clDisponibleMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="33dp"
             app:layout_constraintTop_toBottomOf="@+id/tvDisponibleSaldo"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
