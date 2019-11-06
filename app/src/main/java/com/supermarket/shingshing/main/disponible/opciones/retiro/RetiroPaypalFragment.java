@@ -24,6 +24,7 @@ import com.supermarket.shingshing.main.menu.opciones.CuentasFragment;
 import com.supermarket.shingshing.models.MedioBonificacionModel;
 import com.supermarket.shingshing.network.ApiClient;
 import com.supermarket.shingshing.network.ApiService;
+import com.supermarket.shingshing.util.NumberTextWatcher;
 import com.supermarket.shingshing.util.UsuarioSingleton;
 import com.supermarket.shingshing.util.UtilsView;
 
@@ -86,11 +87,15 @@ public class RetiroPaypalFragment extends Fragment {
 
         binding.tvRetiroPaypalAgregar.setOnClickListener(v -> listener.agregarCuenta(CuentasFragment.NUEVO_CUENTA));
         binding.btnRetiroPaypalSolicitar.setOnClickListener(v -> obtenerDatos());
+
+        binding.etRetiroPaypalCantidad.addTextChangedListener(new NumberTextWatcher(binding.etRetiroPaypalCantidad, "#,###"));
     }
 
     private void obtenerDatos() {
         binding.btnRetiroPaypalSolicitar.setEnabled(false);
         String cantidadTexto = binding.etRetiroPaypalCantidad.getText().toString();
+        cantidadTexto = cantidadTexto.replace("$", "");
+        cantidadTexto = cantidadTexto.replace(",", "");
         int idMedioBonificacion = lista.get(binding.sRetiroPaypalCuenta.getSelectedItemPosition()).getIdMediosBonificacion();
         String fecha = new SimpleDateFormat("yyyy-MM-dd", Locale.US).format(new Date());
         String hora = new SimpleDateFormat("HH:mm:ss", Locale.US).format(new Date());
