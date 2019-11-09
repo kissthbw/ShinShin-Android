@@ -115,7 +115,7 @@ public class CrearCuentaActivity extends AppCompatActivity implements TextWatche
     }
 
     private boolean validarDatos(String nombre, String email, String contrasena, String conContrasena, String telefono, int sexo, String cp) {
-        if (nombre.trim().isEmpty() || nombre.length() <= 5) {
+        if (nombre.trim().isEmpty() || nombre.length() <= 2) {
             binding.etCrearNombre.setError(getString(R.string.crear_error_nombre));
             binding.etCrearNombre.requestFocus();
             return false;
@@ -177,6 +177,7 @@ public class CrearCuentaActivity extends AppCompatActivity implements TextWatche
 
         if (!binding.cbCrearAceptarTC.isChecked()) {
             binding.cbCrearAceptarTC.setError(getString(R.string.crear_error_tyc));
+            return false;
         }
 
         return true;

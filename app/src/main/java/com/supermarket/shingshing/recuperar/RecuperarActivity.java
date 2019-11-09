@@ -17,6 +17,28 @@ public class RecuperarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_recuperar);
 
-        binding.btnRecuperarEnviar.setOnClickListener(v -> startActivity(new Intent(this, EnviadoActivity.class)));
+        binding.btnRecuperarEnviar.setOnClickListener(v -> recuperarDatos());
+    }
+
+    private void recuperarDatos() {
+        String recuperarCorreo = binding.etRecuperarCorreo.getText().toString();
+
+        if(validarDatos(recuperarCorreo)) {
+            startActivity(new Intent(this, EnviadoActivity.class));
+        }
+    }
+
+    private boolean validarDatos(String correo) {
+        if (correo.trim().isEmpty() || (!correo.matches("\\d+") && !android.util.Patterns.EMAIL_ADDRESS.matcher(correo).matches())) {
+            binding.etRecuperarCorreo.setError(getString(R.string.login_error_correo));
+            binding.etRecuperarCorreo.requestFocus();
+            return false;
+        } else if (correo.matches("\\d+") && !correo.matches("\\d{2,10}")) {
+            binding.etRecuperarCorreo.setError(getString(R.string.login_error_correo));
+            binding.etRecuperarCorreo.requestFocus();
+            return false;
+        }
+
+        return true;
     }
 }

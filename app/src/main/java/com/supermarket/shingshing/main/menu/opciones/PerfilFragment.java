@@ -270,7 +270,7 @@ public class PerfilFragment extends Fragment implements EliminarDialogListener, 
         String contrasena = binding.etPerfilContrasenaNueva.getText().toString();
         String confirmar = binding.etPerfilConfirmar.getText().toString();
 
-        if (validarDatos(nombre, correo, telefono, cp, actual, contrasena, confirmar)) {
+        if (validarDatos(nombre, correo, telefono, cp, actual, contrasena, confirmar, fecha, sexo)) {
             JsonObject json = new JsonObject();
             json.addProperty("idUsuario", usuario.getIdUsuario());
             if (!nombre.isEmpty()) {
@@ -305,8 +305,8 @@ public class PerfilFragment extends Fragment implements EliminarDialogListener, 
         }
     }
 
-    private boolean validarDatos(String nombre, String email, String telefono, String cp, String actual, String contrasena, String confirmar) {
-        if (!nombre.trim().isEmpty() && nombre.length() <= 5) {
+    private boolean validarDatos(String nombre, String email, String telefono, String cp, String actual, String contrasena, String confirmar, String fecha, int sexo) {
+        if (!nombre.trim().isEmpty() && nombre.length() <= 2) {
             binding.etPerfilNombre.setError(getString(R.string.crear_error_nombre));
             binding.etPerfilNombre.requestFocus();
             return false;
@@ -321,6 +321,16 @@ public class PerfilFragment extends Fragment implements EliminarDialogListener, 
         if (!telefono.trim().isEmpty() && telefono.length() < 10) {
             binding.etPerfilNumero.setError(getString(R.string.crear_error_telefono));
             binding.etPerfilNumero.requestFocus();
+            return false;
+        }
+
+        if(fecha == null || fecha.isEmpty()) {
+            UtilsView.mostrarAlerta(getContext(),"", getString(R.string.crear_error_fecha), getString(R.string.general_button_aceptar));
+            return false;
+        }
+
+        if(sexo == 0) {
+            UtilsView.mostrarAlerta(getContext(),"", getString(R.string.crear_error_sexo), getString(R.string.general_button_aceptar));
             return false;
         }
 

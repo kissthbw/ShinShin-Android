@@ -18,13 +18,14 @@
     <string name="general_msg_esperar">Por favor espere un momento...</string>
 
     <!--**************** Login ****************-->
-    <string name="login_title_correo">Correo</string>
+    <string name="login_title_correo">Correo / Teléfono</string>
     <string name="login_title_contrasena">Contraseña</string>
     <string name="login_title_nuevo">Inicia sesión con</string>
     <string name="login_title_crea">Crea una cuenta</string>
     <string name="login_button_iniciar">Iniciar Sesión</string>
     <string name="login_button_olvidar">Olvidé mi contraseña :(</string>
     <string name="login_error_correo">Favor de ingresar un correo eléctronico valido</string>
+    <string name="login_error_telefono">Favor de ingresar un teléfono valido</string>
     <string name="login_error_contrasena">Favor de ingresar la contraseña</string>
     <string name="login_error_servicio">Favor de validar el usuario y contraseña</string>
 
@@ -91,6 +92,7 @@
     <string name="crear_error_fecha">Favor de ingresar una fecha válida</string>
     <string name="crear_error_cp">Favor de ingresar un código postal válido</string>
     <string name="crear_error_tyc">Debes aceptar los terminos y condiciones</string>
+    <string name="crear_error_sexo">Favor de ingresar una opción en Sexo</string>
 
     <string name="msg_selecciona">Selecciona</string>
 

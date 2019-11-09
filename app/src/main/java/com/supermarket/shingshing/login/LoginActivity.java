@@ -155,15 +155,19 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private boolean validarDatos(String correo, String contrasena) {
-        if (correo.trim().isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(correo).matches()) {
+        if (correo.trim().isEmpty() || (!correo.matches("\\d+") && !android.util.Patterns.EMAIL_ADDRESS.matcher(correo).matches())) {
+            binding.etLoginCorreo.setError(getString(R.string.login_error_correo));
+            binding.etLoginCorreo.requestFocus();
+            return false;
+        } else if (correo.matches("\\d+") && !correo.matches("\\d{2,10}")) {
             binding.etLoginCorreo.setError(getString(R.string.login_error_correo));
             binding.etLoginCorreo.requestFocus();
             return false;
         }
 
         if (contrasena.trim().isEmpty()) {
-            binding.etLoginCorreo.setError(getString(R.string.login_error_contrasena));
-            binding.etLoginCorreo.requestFocus();
+            binding.etLoginContrasena.setError(getString(R.string.login_error_contrasena));
+            binding.etLoginContrasena.requestFocus();
             return false;
         }
 

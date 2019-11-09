@@ -171,7 +171,7 @@ public class MainFragment extends Fragment implements PopularListener {
     }
 
     private boolean validarDatos(String sugerencia) {
-        if (sugerencia.trim().isEmpty()) {
+        if (sugerencia.trim().isEmpty() || sugerencia.length() < 2) {
             binding.etMainProducto.setError(getString(R.string.main_error_producto));
             binding.etMainProducto.requestFocus();
             return false;

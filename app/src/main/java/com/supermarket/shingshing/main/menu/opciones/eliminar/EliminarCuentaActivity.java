@@ -57,11 +57,11 @@ public class EliminarCuentaActivity extends AppCompatActivity {
             return false;
         }
 
-        if (comentarios.trim().isEmpty()) {
-            binding.etEliminarCuentaComentarios.setError("Favor de ingresar un comentario");
-            binding.etEliminarCuentaComentarios.requestFocus();
-            return false;
-        }
+//        if (comentarios.trim().isEmpty()) {
+//            binding.etEliminarCuentaComentarios.setError("Favor de ingresar un comentario");
+//            binding.etEliminarCuentaComentarios.requestFocus();
+//            return false;
+//        }
 
         return true;
     }
