@@ -76,15 +76,21 @@ public class CameraActivity extends AppCompatActivity {
 
         binding.ivCameraFlash.setOnClickListener(v -> cambiarFlash());
 
-        binding.tvCameraOk.setOnClickListener(v -> mostrarPreview());
-
-        binding.tvCameraBorrar.setOnClickListener(v -> borrar());
+        binding.ivCameraPreview.setOnClickListener(v -> mostrarPreview());
     }
 
     @Override
     public void onResume() {
         super.onResume();
         cameraView.start();
+
+        ContextWrapper cw = new ContextWrapper(getApplicationContext());
+        File directory = cw.getDir("imagenes", Context.MODE_PRIVATE);
+        String[] entries = directory.list();
+        if(entries.length == 0) {
+            contador = 1;
+            binding.ivCameraPreview.setVisibility(View.INVISIBLE);
+        }
     }
 
     @Override
@@ -96,8 +102,6 @@ public class CameraActivity extends AppCompatActivity {
     private void mostrarCaptura(Bitmap bitmap) {
         guardarImagen(bitmap);
         setPreview(bitmap);
-        binding.tvCameraOk.setVisibility(View.VISIBLE);
-        binding.tvCameraBorrar.setVisibility(View.VISIBLE);
     }
 
     private void guardarImagen(Bitmap bitmap) {
@@ -124,21 +128,6 @@ public class CameraActivity extends AppCompatActivity {
         Intent intent = new Intent(this, PreviewActivity.class);
         intent.putExtra("imagenes", contador - 1);
         startActivity(intent);
-    }
-
-    private void borrar() {
-        contador = 1;
-        binding.tvCameraOk.setVisibility(View.INVISIBLE);
-        binding.tvCameraBorrar.setVisibility(View.INVISIBLE);
-        binding.ivCameraPreview.setVisibility(View.INVISIBLE);
-
-        ContextWrapper cw = new ContextWrapper(getApplicationContext());
-        File directory = cw.getDir("imagenes", Context.MODE_PRIVATE);
-        String[] entries = directory.list();
-        for (String s: entries) {
-            File currentFile = new File(directory.getPath(), s);
-            currentFile.delete();
-        }
     }
 
     private void cambiarFlash() {

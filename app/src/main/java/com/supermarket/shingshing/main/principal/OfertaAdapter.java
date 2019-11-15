@@ -63,7 +63,7 @@ public class OfertaAdapter extends RecyclerView.Adapter<OfertaAdapter.OfertaView
             binding.tvItemOfertaNombre.setText(producto.getNombreProducto());
             binding.tvItemOfertaCantidad.setText(producto.getContenido());
             binding.tvItemOfertaPrecio.setText(String.format(Locale.US, "$%d", producto.getCantidadBonificacion()));
-            binding.tvItemOfertaInfo.setOnClickListener(v -> listener.clickPopularProducto(producto));
+            binding.clMainContainer.setOnClickListener(v -> listener.clickPopularProducto(producto));
             if (producto.getColorBanner() != null && !producto.getColorBanner().trim().isEmpty()) {
                 String[] colores = producto.getColorBanner().split(",");
                 binding.ivItemOfertaImagen.setBackgroundColor(Color.argb(255, Integer.parseInt(colores[0].trim()), Integer.parseInt(colores[1].trim()), Integer.parseInt(colores[2].trim())));

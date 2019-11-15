@@ -20,7 +20,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:background="@color/gris_obscuro"
             android:alpha="0.3"
             app:layout_constraintTop_toTopOf="parent"
@@ -29,7 +29,7 @@
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="140dp"
+            android:layout_height="110dp"
             android:background="@color/gris_obscuro"
             android:alpha="0.3"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -41,8 +41,8 @@
             android:layout_height="match_parent"
             android:background="@color/gris_obscuro"
             android:alpha="0.3"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="140dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="110dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
@@ -50,20 +50,20 @@
         <View
             android:layout_width="50dp"
             android:layout_height="match_parent"
-            android:background="@color/gris_obscuro"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="110dp"
             android:alpha="0.3"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="140dp"
-            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/gris_obscuro"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <View
             android:id="@+id/vCameraOverlay"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="140dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="110dp"
             android:layout_marginStart="50dp"
             android:layout_marginEnd="50dp"
             app:layout_constraintTop_toTopOf="parent"
@@ -73,29 +73,28 @@
 
         <TextView
             android:id="@+id/tvCameraOk"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="2dp"
             android:textColor="@android:color/white"
-            android:textSize="24sp"
-            android:text="@string/camara_btn_ok"
-            android:visibility="invisible"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
+            android:textSize="14sp"
+            android:text="@string/camara_msg_texto_ticket"
+            android:textAlignment="center"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <View
             android:id="@+id/viewCamera"
             android:layout_width="match_parent"
-            android:layout_height="140dp"
+            android:layout_height="110dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
         <ImageView
             android:id="@+id/ivCameraTomar"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:src="@drawable/img_circle_naranja_fuerte"
             app:layout_constraintTop_toTopOf="@+id/viewCamera"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -104,8 +103,8 @@
             tools:ignore="ContentDescription" />
 
         <ImageView
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:src="@drawable/ic_camara_white"
             android:background="@drawable/img_circle_naranja"
             android:padding="10dp"
@@ -120,7 +119,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/ic_flash_white"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="20dp"
             app:layout_constraintTop_toTopOf="@+id/ivCameraTomar"
             app:layout_constraintBottom_toBottomOf="@+id/ivCameraTomar"
             app:layout_constraintEnd_toStartOf="@+id/ivCameraTomar"
@@ -131,24 +130,11 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/ic_help_white"
-            android:layout_marginEnd="5dp"
+            android:layout_marginEnd="20dp"
             app:layout_constraintTop_toTopOf="@+id/ivCameraTomar"
             app:layout_constraintBottom_toBottomOf="@+id/ivCameraTomar"
             app:layout_constraintEnd_toStartOf="@+id/ivCameraFlash"
             tools:ignore="ContentDescription" />
-
-        <TextView
-            android:id="@+id/tvCameraBorrar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
-            android:text="@string/camara_btn_borrar"
-            android:visibility="invisible"
-            app:layout_constraintTop_toTopOf="@+id/ivCameraTomar"
-            app:layout_constraintBottom_toBottomOf="@+id/ivCameraTomar"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/ivCameraAyuda"/>
 
         <ImageView
             android:id="@+id/ivCameraPreview"

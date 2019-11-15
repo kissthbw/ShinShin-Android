@@ -1,6 +1,7 @@
 package com.supermarket.shingshing.main;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
@@ -31,6 +32,7 @@ import com.supermarket.shingshing.main.menu.opciones.AyudaFragment;
 import com.supermarket.shingshing.main.menu.opciones.ContactoFragment;
 import com.supermarket.shingshing.main.menu.opciones.CuentasFragment;
 import com.supermarket.shingshing.main.menu.opciones.PerfilFragment;
+import com.supermarket.shingshing.main.menu.opciones.agregar.NoGuardadoListener;
 import com.supermarket.shingshing.main.menu.opciones.agregar.NuevaCuentaFragment;
 import com.supermarket.shingshing.main.menu.opciones.agregar.NuevaTarjetaFragment;
 import com.supermarket.shingshing.main.menu.opciones.agregar.NuevoListener;
@@ -45,9 +47,11 @@ import com.supermarket.shingshing.util.UsuarioSingleton;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Objects;
 
-public class MainActivity extends AppCompatActivity implements MainListener, MenuListener, NuevoListener, RetiroListener {
+public class MainActivity extends AppCompatActivity implements MainListener, MenuListener, NuevoListener, RetiroListener, NoGuardadoListener {
     private ActivityMainBinding binding;
+    private boolean noGuardado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements MainListener, Men
         binding.ivMainNotificacion.setOnClickListener(v -> cargarFragment(new AlertasFragment(), null, false));
 
         NumberFormat formatter = new DecimalFormat("#,###");
-        String money = "$ " + formatter.format(UsuarioSingleton.getUsuario().getBonificacion());
+        String money = "$ " + formatter.format(Objects.requireNonNull(UsuarioSingleton.getUsuario()).getBonificacion());
         binding.tvMainSaldo.setText(money);
 
         cargarFragment(new MainFragment(), null, false);
@@ -258,10 +262,33 @@ public class MainActivity extends AppCompatActivity implements MainListener, Men
     @Override
     public void onBackPressed() {
         FragmentManager fm = getSupportFragmentManager();
-        if (fm.getBackStackEntryCount() == 1) {
-            finish();
+
+        if(noGuardado) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("")
+                    .setMessage(getString(R.string.alerta_no_guardado))
+                    .setCancelable(false)
+                    .setPositiveButton("Seguir Aquí", (dialog, which) -> dialog.dismiss())
+                    .setNegativeButton("Salir", (dialog, which) -> {if (fm.getBackStackEntryCount() == 1) {
+                        finish();
+                    } else {
+                        fm.popBackStack();
+                        noGuardado = false;
+                    }});
+
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
         } else {
-            fm.popBackStack();
+            if (fm.getBackStackEntryCount() == 1) {
+                finish();
+            } else {
+                fm.popBackStack();
+            }
         }
+    }
+
+    @Override
+    public void onEditar(boolean noGuardado) {
+        this.noGuardado = noGuardado;
     }
 }

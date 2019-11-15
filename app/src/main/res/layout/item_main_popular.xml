@@ -23,7 +23,10 @@
 			<androidx.constraintlayout.widget.ConstraintLayout
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:padding="5dp">
+				android:padding="5dp"
+				android:clickable="true"
+				android:focusable="true"
+				android:id="@+id/clMainContainer">
 
 				<ImageView
 					android:id="@+id/ivItemPopularImagen"

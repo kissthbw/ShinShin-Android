@@ -127,7 +127,7 @@ public class RetiroPaypalFragment extends Fragment {
         }
 
         int cantidad = Integer.parseInt(cantidadTexto);
-        if (cantidad == 0) {
+        if (cantidad < 10) {
             binding.etRetiroPaypalCantidad.setError(getString(R.string.retiro_msg_agregar_cantidad));
             binding.etRetiroPaypalCantidad.requestFocus();
             return false;

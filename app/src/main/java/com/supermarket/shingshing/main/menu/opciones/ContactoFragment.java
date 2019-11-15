@@ -64,7 +64,7 @@ public class ContactoFragment extends Fragment {
             return false;
         }
 
-        if (detalle.trim().isEmpty()) {
+        if (detalle.trim().isEmpty() || detalle.length() < 2) {
             binding.etAyudaCuentanos.setError(getString(R.string.contacto_error_detalle));
             binding.etAyudaCuentanos.requestFocus();
             return false;

@@ -9,6 +9,8 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,6 +50,7 @@ public class NuevaTarjetaFragment extends Fragment implements EliminarDialogList
 
     private FragmentNuevaTarjetaBinding binding;
     private NuevoListener listener;
+    private NoGuardadoListener noGuardadoListener;
     private ApiService apiService;
 
     private ArrayList<TipoBancariaModel> tipoBancarias;
@@ -61,6 +64,7 @@ public class NuevaTarjetaFragment extends Fragment implements EliminarDialogList
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         listener = (NuevoListener) context;
+        noGuardadoListener = (NoGuardadoListener) context;
     }
 
     @Override
@@ -102,7 +106,18 @@ public class NuevaTarjetaFragment extends Fragment implements EliminarDialogList
         idUsuario = UsuarioSingleton.getUsuario().getIdUsuario();
 
         binding.ivBancariaCamara.setOnClickListener(v -> ScanActivity.start(getActivity(), getString(R.string.nuevo_tarjeta_msg_titulo), getString(R.string.nuevo_tarjeta_msg_subtitulo)));
+        binding.etBancariaNumero.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
 
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                noGuardadoListener.onEditar(!editable.toString().isEmpty());
+            }
+        });
         obtenerTipoBancaria();
     }
 
@@ -167,6 +182,13 @@ public class NuevaTarjetaFragment extends Fragment implements EliminarDialogList
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 tipoCuenta = tipoBancarias.get(position).getDescripcionBancaria();
+                if(tipoCuenta.equalsIgnoreCase("tarjeta")) {
+                    binding.ivBancariaCamara.setVisibility(View.VISIBLE);
+                    binding.tvBancariaTituloNuevo.setText(R.string.nuevo_title_no_tarjeta);
+                } else {
+                    binding.ivBancariaCamara.setVisibility(View.INVISIBLE);
+                    binding.tvBancariaTituloNuevo.setText(tipoCuenta.equalsIgnoreCase("tarjeta") ? R.string.nuevo_title_no_tarjeta : R.string.nuevo_title_clabe);
+                }
             }
 
             @Override
@@ -236,7 +258,21 @@ public class NuevaTarjetaFragment extends Fragment implements EliminarDialogList
     }
 
     private boolean validarDatos(String alias, String cuenta) {
-        if (cuenta.trim().isEmpty() || cuenta.length() < 10) {
+        boolean errorTarjeta = false;
+        int compania = getTipoCompania(cuenta);
+
+        if(tipoCuenta.equalsIgnoreCase("tarjeta")) {
+            errorTarjeta = cuenta.trim().isEmpty();
+            if (compania == AMERICAN && cuenta.length() < 16) errorTarjeta = true;
+            if ((compania == VISA || compania == MASTERCARD) && cuenta.length() < 15)
+                errorTarjeta = true;
+        } else if(tipoCuenta.equalsIgnoreCase("cuenta")) {
+            errorTarjeta = cuenta.trim().isEmpty() || cuenta.length() < 10;
+        } else {
+            errorTarjeta = cuenta.trim().isEmpty() || cuenta.length() < 18 || cuenta.length() > 19;
+        }
+
+        if (errorTarjeta) {
             String error = tipoCuenta.equalsIgnoreCase("tarjeta") ? getString(R.string.nuevo_error_tarjeta) :
                     tipoCuenta.equalsIgnoreCase("cuenta") ? getString(R.string.nuevo_error_cuenta) : getString(R.string.nuevo_error_clabe);
             binding.etBancariaNumero.setError(error);
@@ -262,6 +298,7 @@ public class NuevaTarjetaFragment extends Fragment implements EliminarDialogList
                     UtilsView.esconderProgress();
                     binding.btnBancariaGuardar.setEnabled(true);
                     if (result.getCode() == 200) {
+                        noGuardadoListener.onEditar(false);
                         listener.onClickMostrarSnackbar(getString(R.string.nuevo_msg_agregar_tarjeta));
                     }
                 }, throwable -> {
@@ -280,6 +317,7 @@ public class NuevaTarjetaFragment extends Fragment implements EliminarDialogList
                     UtilsView.esconderProgress();
                     binding.btnBancariaGuardar.setEnabled(true);
                     if (result.getCode() == 200) {
+                        noGuardadoListener.onEditar(false);
                         listener.onClickMostrarSnackbar(getString(R.string.nuevo_msg_actualizar));
                     }
                 }, throwable -> {
@@ -300,6 +338,7 @@ public class NuevaTarjetaFragment extends Fragment implements EliminarDialogList
                 .subscribe(result -> {
                     UtilsView.esconderProgress();
                     if (result.getCode() == 200) {
+                        noGuardadoListener.onEditar(false);
                         listener.onClickMostrarSnackbar(getString(R.string.nuevo_msg_eliminada_tarjeta));
                     }
                 }, throwable -> {

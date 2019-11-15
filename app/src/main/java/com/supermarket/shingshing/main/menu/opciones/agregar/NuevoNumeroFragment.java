@@ -8,6 +8,8 @@ import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,6 +40,7 @@ public class NuevoNumeroFragment extends Fragment implements EliminarDialogListe
     private static final String TAG = NuevoNumeroFragment.class.getSimpleName();
     private FragmentNuevoNumeroBinding binding;
     private NuevoListener listener;
+    private NoGuardadoListener noGuardadoListener;
     private ApiService apiService;
 
     private MedioBonificacionModel numero;
@@ -49,6 +52,7 @@ public class NuevoNumeroFragment extends Fragment implements EliminarDialogListe
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
         listener = (NuevoListener) context;
+        noGuardadoListener = (NoGuardadoListener) context;
     }
 
     @Override
@@ -98,6 +102,19 @@ public class NuevoNumeroFragment extends Fragment implements EliminarDialogListe
                 dialogFragment.show(getFragmentManager().beginTransaction(), EliminarDialogFragment.class.getSimpleName());
             });
         }
+
+        binding.etNumeroTelefono.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                noGuardadoListener.onEditar(!editable.toString().isEmpty());
+            }
+        });
     }
 
     private int getPositionArray(String[] array, String mes) {
@@ -182,6 +199,7 @@ public class NuevoNumeroFragment extends Fragment implements EliminarDialogListe
                     UtilsView.esconderProgress();
                     binding.btnNumeroGuardar.setEnabled(true);
                     if (result.getCode() == 200) {
+                        noGuardadoListener.onEditar(false);
                         listener.onClickMostrarSnackbar(getString(R.string.nuevo_msg_agregar_numero));
                     }
                 }, throwable -> {
@@ -200,6 +218,7 @@ public class NuevoNumeroFragment extends Fragment implements EliminarDialogListe
                     UtilsView.esconderProgress();
                     binding.btnNumeroGuardar.setEnabled(true);
                     if (result.getCode() == 200) {
+                        noGuardadoListener.onEditar(false);
                         listener.onClickMostrarSnackbar(getString(R.string.nuevo_msg_actualizar));
                     }
                 }, throwable -> {
@@ -220,6 +239,7 @@ public class NuevoNumeroFragment extends Fragment implements EliminarDialogListe
                 .subscribe(result -> {
                     UtilsView.esconderProgress();
                     if (result.getCode() == 200) {
+                        noGuardadoListener.onEditar(false);
                         listener.onClickMostrarSnackbar(getString(R.string.nuevo_msg_eliminada_numero));
                     }
                 }, throwable -> {

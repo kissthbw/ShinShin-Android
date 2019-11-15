@@ -168,6 +168,7 @@
     <string name="nuevo_title_banco_destino">Banco destino</string>
     <string name="nuevo_title_nombre_corto">Nombre corto</string>
     <string name="nuevo_title_no_tarjeta">No. de Tarjeta / Cuenta</string>
+    <string name="nuevo_title_clabe">CLABE</string>
     <string name="nuevo_title_tipo">Tipo</string>
     <string name="nuevo_title_vencimiento">Vencimiento</string>
     <string name="nuevo_msg_marcas">Marcas participantes:</string>
@@ -230,6 +231,7 @@
     <!--**************** Camara ****************-->
     <string name="camara_btn_ok">OK</string>
     <string name="camara_btn_borrar">Borrar</string>
+    <string name="camara_msg_texto_ticket">Si tu Ticket es muy largo,\nno te apures, tomalo en varias fotos ;-)</string>
 
     <!--**************** Resultado ****************-->
     <string name="resultado_title_ticket">Ticket</string>
@@ -270,6 +272,7 @@
     <string name="tickets_msg_pregunta">¿Qué esperas?</string>
     <string name="tickets_btn_subir">Subir Ticket</string>
     <string name="historial_msg_tipo">Tipo</string>
+    <string name="alerta_no_guardado">Aun no has guardado esta cuenta, ¿Aun asi quieres salir?</string>
 
     <!--**************** Tickets ****************-->
     <string name="historial_msg_fecha">Fecha</string>
@@ -286,16 +289,99 @@
     <!--**************** Ticket error ****************-->
     <string name="lentesucio_mensaje">Intentalo de nuevo, verifica\ntener buena iluminación y\nlimpio el lente de tu cámara</string>
     <string name="lentesucio_btn">Intentar de nuevo</string>
-    <string name="privacidad_title">Privacidad</string>
+    <string name="privacidad_title">AVISO DE PRIVACIDAD</string>
 
     <!--**************** Lente sucio ****************-->
-    <string name="privacidad_subtitle">En esta Política, se describe la información que tratamos para respaldar a Shing Shing. Debemos tratar tu información a fin de proporcionarte la app Shing Shing.</string>
-    <string name="privacidad_subtitle_dos">Lo que tú y otras personas hacen y proporcionan.</string>
-    <string name="privacidad_texto">Información y contenido que nos proporcionas. Recopilamos el contenido, las comunicaciones y otros datos que proporcionas cuando usas nuestros Productos. Por ejemplo, cuando te registras para crear una cuenta, creas o compartes contenido, y envías mensajes a otras personas o te comunicas con ellas. Esto puede incluir información en el contenido, o sobre él, que proporcionas (como los metadatos), por ejemplo, la ubicación de una foto o la fecha de creación de un archivo. También puede incluir el contenido que ves a través de las funciones que proporcionamos, como la cámara, para que podamos realizar acciones como sugerirte máscaras y filtros que quizá te gusten, así como darte consejos sobre cómo usar los formatos de cámara. Nuestros sistemas tratan automáticamente el contenido y las comunicaciones que tú y otras personas proporcionan para analizar el contexto y lo que incluyen en relación con los propósitos que se describen a continuación. Obtén más información sobre cómo controlar quién puede ver el contenido que compartes.
-        \n\nDatos con protecciones especiales: puedes optar por proporcionar información en los campos de tu perfil de Facebook o acontecimientos importantes relacionados con tus creencias religiosas, tus ideologías políticas, tus intereses o aspectos relacionados con tu salud. Esta y otra información (como el origen étnico o racial, las creencias filosóficas o la afiliación sindical) puede estar sujeta a protecciones especiales en virtud de las leyes de tu país.
-        \n\nRedes y conexiones. Recopilamos información sobre las personas, las páginas, las cuentas, los hashtags y los grupos a los que estás conectado y cómo interactúas con ellos a través de nuestros Productos, como las personas con las que más te comunicas o los grupos de los que formas parte. También recopilamos información de contacto si eliges subirla, sincronizarla o importarla desde un dispositivo (como una libreta de direcciones, un registro de llamadas o un historial de SMS), que usamos para fines como ayudarte a encontrar personas que quizá conoces y para otros fines que se describen a continuación.
-        \n\nTu uso. Recopilamos información sobre cómo usas nuestros Productos, como los tipos de contenido que ves o con los que interactúas, las funciones que utilizas, las acciones que llevas a cabo, las personas o cuentas con las que interactúas, y la hora, la frecuencia y la duración de tus actividades. Por ejemplo, registramos cuándo estás usando y cuándo usaste por última vez nuestros Productos, y qué publicaciones, videos y otro tipo de contenido ves en nuestros Productos. También recopilamos información sobre cómo usas funciones como nuestra cámara.
-        \n\nInformación sobre transacciones realizadas en nuestros Productos. Si usas nuestros Productos para efectuar compras u otras transacciones financieras (por ejemplo, cuando realizas una compra en un juego o haces una donación), recopilamos información sobre dicha compra o transacción. Esto incluye información de pago, como el número de tu tarjeta de crédito o débito y otra información sobre la tarjeta; otra información sobre la cuenta y la autenticación; y detalles de facturación, envío y contacto.</string>
+    <string name="privacidad_texto_intro">SHING SHING, un producto de TRADENIAL S.A de C.V, con domicilio conocido en la entidad de Ciudad de México, país México, y portal de internet www.shingshing.com, es el responsable del uso y protección de sus datos personales, y al respecto le informamos lo siguiente: </string>
+    <string name="privacidad_texto_01_subtitulo">\n¿Para qué fines utilizaremos sus datos personales?</string>
+    <string name="privacidad_texto_01">Los datos personales que recabamos de usted, los utilizaremos para las siguientes finalidades que son necesarias para el servicio que solicita:
+        \n\n&#8226;\t\tCreación de cuenta y perfil de usuario
+        \n&#8226;\t\tManejo de información con instituciones bancarias
+        \n&#8226;\t\tValidación de autenticidad del usuario respecto al perfil
+        \n&#8226;\t\tAdministración de información solicitada por los clientes de la aplicación respecto delcomportamiento del usuario
+        \n&#8226;\t\tMercadotecnia o publicitaria
+        \n&#8226;\t\tProspección comercial</string>
+    <string name="privacidad_texto_02_subtitulo">\n¿Qué datos personales utilizaremos para estos fines?</string>
+    <string name="privacidad_texto_02">Para llevar a cabo las finalidades descritas en el presente aviso de privacidad, utilizaremos los siguientes datos personales:
+        \n\n&#8226;\t\tNombre
+        \n&#8226;\t\tEstado Civil
+        \n&#8226;\t\tFecha de nacimiento
+        \n&#8226;\t\tNacionalidad
+        \n&#8226;\t\tDomicilio
+        \n&#8226;\t\tTeléfono celular
+        \n&#8226;\t\tCorreo electrónico
+        \n&#8226;\t\tFirma electrónica
+        \n&#8226;\t\tEdad
+        \n&#8226;\t\tFotografía
+        \n&#8226;\t\tPuesto o cargo que desempeña
+        \n&#8226;\t\tTítulos
+        \n&#8226;\t\tCuentas bancarias
+        \n&#8226;\t\tNúmero de tarjetas de crédito
+        \n&#8226;\t\tPasatiempos
+        \n&#8226;\t\tPerfil de redes sociales como Facebook y Google+</string>
+    <string name="privacidad_texto_03_subtitulo">\n¿Con quién compartimos su información personal y para qué fines?</string>
+    <string name="privacidad_texto_03a">Le informamos que sus datos personales son compartidos dentro del país con las siguientes personas, empresas,
+        organizaciones o autoridades distintas a nosotros, para los siguientes fines:</string>
+    <string name="privacidad_texto_03b">Su información no será compartida con otra institución o persona, ya sea física o moral,
+        salvo en los casos que establece la Ley Federal para la Protección de Datos Personales, en su Artículo 22.</string>
+    <string name="privacidad_texto_04_subtitulo">\n¿Cómo puede acceder, rectificar o cancelar sus datos personales, u oponerse a su uso?</string>
+    <string name="privacidad_texto_04">Usted tiene derecho a conocer qué datos personales tenemos de usted, para qué los utilizamos y las condiciones del
+        uso que les damos (Acceso). Asimismo, es su derecho solicitar la corrección de su información personal en caso de que esté desactualizada,
+        sea inexacta o incompleta (Rectificación); que la eliminemos de nuestros registros o bases de datos cuando considere que la
+        misma no está siendo utilizada adecuadamente (Cancelación) considerando que esta acción requiere eliminar su perfil del plan de lealtad o
+        aplicación; así como oponerse al uso de sus datos personales para fines específicos (Oposición). Estos derechos se conocen como derechos ARCO.
+        \n\nPara el ejercicio de cualquiera de los derechos ARCO, usted deberá presentar la solicitud respectiva a través del siguiente medio:
+        \n\nA través del perfil registrado, ir a la sección de contacto o asistencia y solicitar el acceso a los
+        derechos ARCO, en el mismo medio digital </string>
+    <string name="privacidad_texto_05_subtitulo">\nUsted puede revocar su consentimiento para el uso de sus datos personales</string>
+    <string name="privacidad_texto_05">Usted puede revocar el consentimiento que, en su caso, nos haya otorgado para el tratamiento de
+        sus datos personales. Sin embargo, es importante que tenga en cuenta que no en todos los casos podremos atender su solicitud o concluir el uso de forma inmediata, ya que es posible que por
+        alguna obligación legal requiramos seguir tratando sus datos personales. Asimismo, usted deberá considerar que para ciertos fines, la revocación de su consentimiento implicará que no le podamos
+        seguir prestando el servicio que nos solicitó, o la conclusión de su relación con nosotros.
+        \n\nPara revocar su consentimiento deberá presentar su solicitud a través del siguiente medio:
+        \n\nA través del medio electrónico o app, ingresando a su perfil, en la sección de contacto o asistencia. O a través de un correo electrónico a la dirección de contacto@tradenial.com
+        \n\nPara conocer el procedimiento y requisitos para la revocación del consentimiento, ponemos a su disposición el siguiente medio:
+        \n\nA través del medio electrónico o app, ingresando a su perfil, en la sección de contacto o asistencia. O a través de un correo electrónico a la dirección de contacto@tradenial.com</string>
+    <string name="privacidad_texto_06_subtitulo">\n¿Cómo puede limitar el uso o divulgación de su información personal?</string>
+    <string name="privacidad_texto_06">Con objeto de que usted pueda limitar el uso y divulgación de su información personal, le ofrecemos los siguientes medios:
+        \n\nA través del medio electrónico o app, ingresando a su perfil, en la sección de contacto o asistencia.
+        \nO a través de un correo electrónico a la dirección de contacto@tradenial.com</string>
+    <string name="privacidad_texto_07_subtitulo">\nEl uso de tecnologías de rastreo en nuestro portal de internet</string>
+    <string name="privacidad_texto_07">Le informamos que en nuestra página de internet utilizamos cookies, web beacons u otras tecnologías, a través de las cuales es posible monitorear su comportamiento como usuario de internet, así como brindarle un mejor servicio y experiencia al navegar en nuestra página. Los datos personales que recabamos a través de estas tecnologías, los utilizaremos para los siguientes fines:
+        \n\nPara intercambio de información con los clientes del plan de lealtad o app, para determinar hábitos de consumo y perfiles de consumidores.
+        \n\nLos datos personales que obtenemos de estas tecnologías de rastreo son los siguientes:
+
+        \n\n&#8226;\t\tIdentificadores, nombre de usuario y contraseñas de una sesión
+        \n&#8226;\t\tIdioma preferido por el usuario
+        \n&#8226;\t\tRegión en la que se encuentra el usuario
+        \n&#8226;\t\tTipo de navegador del usuario
+        \n&#8226;\t\tTipo de sistema operativo del usuario
+        \n&#8226;\t\tFecha y hora del inicio y final de una sesión de un usuario
+        \n&#8226;\t\tPáginas web visitadas por un usuario
+        \n&#8226;\t\tBúsquedas realizadas por un usuario
+        \n&#8226;\t\tPublicidad revisada por un usuario
+        \n&#8226;\t\tListas y hábitos de consumo en páginas de compras
+        \n&#8226;\t\tRedes sociales que utiliza
+
+        \n\nAsimismo, le informamos que su información personal será compartida con las siguientes personas, empresas, organizaciones o autoridades distintas a nosotros, para los siguientes fines:</string>
+    <string name="privacidad_texto_08_subtitulo">\n¿Cómo puede conocer los cambios en este aviso de privacidad?</string>
+    <string name="privacidad_texto_08">El presente aviso de privacidad puede sufrir modificaciones, cambios o actualizaciones derivadas de
+        nuevos requerimientos legales; de nuestras propias necesidades por los productos o servicios que ofrecemos; de nuestras prácticas de
+        privacidad; de cambios en nuestro modelo de negocio, o por otras causas.
+
+        \n\nNos comprometemos a mantenerlo informado sobre los cambios que pueda sufrir el presente aviso de privacidad, a través de: A través
+        del correo electrónico que el usuario haya registrado en su perfil dentro del medio electrónico o app, o en una pantalla emergente que
+        aparecerá al ingresar en la app y en la página de internet www.shingshing.com.
+
+        \n\nEl procedimiento a través del cual se llevarán a cabo las notificaciones sobre cambios o actualizaciones al presente aviso de privacidad es el siguiente:
+
+        \n\nA través del correo electrónico que el usuario haya registrado en su perfil dentro del medio electrónico o app, o en una
+        pantalla emergente que aparecerá al ingresar en la app y en la pagina de internet www.shingshing.com
+
+        \n\nEl Aviso Integral de Privacidad, lo puede consultar en la sección de Perfil, en el menú lateral, ingresar a la liga de Aviso de Privacidad,
+        o en el pie de página del sitio web www.shingshing.com.
+
+        \n\nÚltima actualización: 05/11/2019</string>
 
     <!--**************** Privacidad ****************-->
     <string name="terminos_title">Terminos</string>

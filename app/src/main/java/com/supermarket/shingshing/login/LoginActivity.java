@@ -125,8 +125,8 @@ public class LoginActivity extends AppCompatActivity {
 
         //binding.etLoginCorreo.setText("kissthbw@gmail.com");
         //binding.etLoginContrasena.setText("kiss2101");
-        binding.etLoginCorreo.setText("roberto.htamayo@gmail.com");
-        binding.etLoginContrasena.setText("robe2019");
+//        binding.etLoginCorreo.setText("roberto.htamayo@gmail.com");
+//        binding.etLoginContrasena.setText("robe2019");
 
         apiService = ApiClient.getClient(getApplicationContext()).create(ApiService.class);
         iniciarLoginGoogle();
@@ -207,11 +207,11 @@ public class LoginActivity extends AppCompatActivity {
 
     private void mostrarContrasena() {
         if (isVisibleContra) {
-            binding.ivLoginContrasena2.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_eye_open_grey));
+            binding.ivLoginContrasena2.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_eye_close_grey));
             binding.etLoginContrasena.setTransformationMethod(PasswordTransformationMethod.getInstance());
             isVisibleContra = false;
         } else {
-            binding.ivLoginContrasena2.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_eye_close_grey));
+            binding.ivLoginContrasena2.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_eye_open_grey));
             binding.etLoginContrasena.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
             isVisibleContra = true;
         }

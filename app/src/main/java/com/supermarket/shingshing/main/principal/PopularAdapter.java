@@ -57,7 +57,7 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.PopularV
             binding.tvItemPopularNombre.setText(producto.getNombreProducto());
             binding.tvItemPopularCantidad.setText(producto.getContenido());
             binding.tvItemPopularPrecio.setText(String.format(Locale.US, "$%d", producto.getCantidadBonificacion()));
-            binding.tvItemPopularInfo.setOnClickListener(v -> listener.clickPopularProducto(producto));
+            binding.clMainContainer.setOnClickListener(v -> listener.clickPopularProducto(producto));
         }
     }
 }

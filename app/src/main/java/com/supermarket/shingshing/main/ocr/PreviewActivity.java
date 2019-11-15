@@ -11,6 +11,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import com.google.firebase.ml.vision.FirebaseVision;
 import com.google.firebase.ml.vision.common.FirebaseVisionImage;
@@ -77,6 +78,7 @@ public class PreviewActivity extends AppCompatActivity {
 
         binding.btnPreviewAgregar.setOnClickListener(v -> finish());
         binding.btnPreviewListo.setOnClickListener(v -> leerImagenes(1));
+        binding.ivEliminar.setOnClickListener(view -> borrar());
     }
 
     private void leerImagenes(int contador) {
@@ -167,5 +169,16 @@ public class PreviewActivity extends AppCompatActivity {
 
     private void verVistaError() {
         startActivity(new Intent(this, LenteSucioActivity.class));
+    }
+
+    private void borrar() {
+        ContextWrapper cw = new ContextWrapper(getApplicationContext());
+        File directory = cw.getDir("imagenes", Context.MODE_PRIVATE);
+        String[] entries = directory.list();
+        for (String s: entries) {
+            File currentFile = new File(directory.getPath(), s);
+            currentFile.delete();
+        }
+        finish();
     }
 }

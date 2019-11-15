@@ -207,11 +207,11 @@ public class CrearCuentaActivity extends AppCompatActivity implements TextWatche
 
     private void mostrarContrasena1() {
         if (isVisibleContra1) {
-            binding.ivCrearContrasena2.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_eye_open_grey));
+            binding.ivCrearContrasena2.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_eye_close_grey));
             binding.etCrearContrasena.setTransformationMethod(PasswordTransformationMethod.getInstance());
             isVisibleContra1 = false;
         } else {
-            binding.ivCrearContrasena2.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_eye_close_grey));
+            binding.ivCrearContrasena2.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_eye_open_grey));
             binding.etCrearContrasena.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
             isVisibleContra1 = true;
         }
@@ -219,11 +219,11 @@ public class CrearCuentaActivity extends AppCompatActivity implements TextWatche
 
     private void mostrarContrasena2() {
         if (isVisibleContra2) {
-            binding.ivCrearConfirmar2.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_eye_open_grey));
+            binding.ivCrearConfirmar2.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_eye_close_grey));
             binding.etCrearConfirmar.setTransformationMethod(PasswordTransformationMethod.getInstance());
             isVisibleContra2 = false;
         } else {
-            binding.ivCrearConfirmar2.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_eye_close_grey));
+            binding.ivCrearConfirmar2.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.ic_eye_open_grey));
             binding.etCrearConfirmar.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
             isVisibleContra2 = true;
         }
