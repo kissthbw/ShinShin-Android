@@ -16,6 +16,7 @@
     <string name="general_button_salir">Salir</string>
     <string name="general_msg_acepto">Acepto</string>
     <string name="general_msg_esperar">Por favor espere un momento...</string>
+    <string name="general_error">Ocurrió un error, intenta más tarde</string>
 
     <!--**************** Login ****************-->
     <string name="login_title_correo">Correo / Teléfono</string>

@@ -49,6 +49,10 @@ public interface ApiService {
     Single<ResponseModel> reenviar(@Body JsonObject json);
 
     @Headers({"Content-type:application/json"})
+    @POST("/usuarios/solicitarRestaurarPassword")
+    Single<ResponseModel> recuperarContrasena(@Body JsonObject json);
+
+    @Headers({"Content-type:application/json"})
     @POST("/usuarios/usuario/actualizar")
     Single<ResponseActualizarModel> actualizarPerfil(@Body JsonObject json);
 
