@@ -125,8 +125,8 @@ public class LoginActivity extends AppCompatActivity {
 
         //binding.etLoginCorreo.setText("kissthbw@gmail.com");
         //binding.etLoginContrasena.setText("kiss2101");
-//        binding.etLoginCorreo.setText("roberto.htamayo@gmail.com");
-//        binding.etLoginContrasena.setText("robe2019");
+        binding.etLoginCorreo.setText("roberto.htamayo@gmail.com");
+        binding.etLoginContrasena.setText("robe2019");
 
         apiService = ApiClient.getClient(getApplicationContext()).create(ApiService.class);
         iniciarLoginGoogle();

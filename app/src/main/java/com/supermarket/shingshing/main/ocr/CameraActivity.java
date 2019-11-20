@@ -15,6 +15,7 @@ import android.widget.ImageView;
 
 import com.supermarket.shingshing.R;
 import com.supermarket.shingshing.databinding.ActivityCameraBinding;
+import com.supermarket.shingshing.main.ocr.ayuda.AyudaCamaraActivity;
 import com.wonderkiln.camerakit.CameraKit;
 import com.wonderkiln.camerakit.CameraKitError;
 import com.wonderkiln.camerakit.CameraKitEvent;
@@ -73,6 +74,8 @@ public class CameraActivity extends AppCompatActivity {
             cameraView.start();
             cameraView.captureImage();
         });
+
+        binding.ivCameraAyuda.setOnClickListener(v -> startActivity(new Intent(this, AyudaCamaraActivity.class)));
 
         binding.ivCameraFlash.setOnClickListener(v -> cambiarFlash());
 

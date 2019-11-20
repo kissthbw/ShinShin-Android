@@ -232,6 +232,10 @@
     <string name="camara_btn_ok">OK</string>
     <string name="camara_btn_borrar">Borrar</string>
     <string name="camara_msg_texto_ticket">Si tu Ticket es muy largo,\nno te apures, tomalo en varias fotos ;-)</string>
+    <string name="ayuda_camara_msg1">Coloca tu dispositivo encima\nde tu ticket, a 30 cm. aprox.</string>
+    <string name="ayuda_camara_msg2">Verifica que tu Ticket este\ndentro del área marcada</string>
+    <string name="ayuda_camara_msg3">En caso de que tu Ticket este\nmuy largo, tómalo en varias fotos</string>
+    <string name="ayuda_camara_msg4">Procura tener limpio el lente\nde tu cámara y buena iluminación.</string>
 
     <!--**************** Resultado ****************-->
     <string name="resultado_title_ticket">Ticket</string>

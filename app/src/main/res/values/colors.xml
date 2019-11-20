@@ -20,4 +20,5 @@
     <color name="cafe">#333333</color>
     <color name="blanco">#ffffff</color>
     <color name="ayuda_respuesta">#F6F6F6</color>
+    <color name="ayuda_camara">#5A5A5A</color>
 </resources>

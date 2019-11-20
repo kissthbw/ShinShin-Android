@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".main.ocr.ayuda.AyudaCamaraActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vpAyudaPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/llAyudaDots"/>
+
+        <LinearLayout
+            android:id="@+id/llAyudaDots"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/btnAyudaSiguiente">
+
+            <ImageView
+                android:id="@+id/ivAyuda1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_dot_ayuda_enable"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/ivAyuda2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_dot_ayuda_disable"
+                android:layout_marginStart="10dp"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/ivAyuda3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_dot_ayuda_disable"
+                android:layout_marginStart="10dp"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/ivAyuda4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_dot_ayuda_disable"
+                android:layout_marginStart="10dp"
+                tools:ignore="ContentDescription" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnAyudaSalir"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"
+            android:fontFamily="@font/font_nunito_semibold"
+            android:text="@string/general_button_salir"
+            android:textAllCaps="false"
+            android:background="@drawable/round_corner_ayuda"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineAyuda"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <Button
+            android:id="@+id/btnAyudaSiguiente"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:fontFamily="@font/font_nunito_extrabold"
+            android:text="@string/intro_btn_siguiente"
+            android:textAllCaps="false"
+            android:background="@drawable/round_corner_naranja"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintStart_toEndOf="@+id/guidelineAyuda"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineAyuda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5"/>
+
+        <Button
+            android:id="@+id/btnAyudaListo"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:fontFamily="@font/font_nunito_extrabold"
+            android:text="@string/general_button_vale"
+            android:textAllCaps="false"
+            android:background="@drawable/round_corner_naranja"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:visibility="gone"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
