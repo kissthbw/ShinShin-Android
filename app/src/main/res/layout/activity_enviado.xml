@@ -12,9 +12,10 @@
 
         <ImageView
             android:id="@+id/ivEnviadoImagen"
-            android:layout_width="150dp"
+            android:layout_width="170dp"
             android:layout_height="150dp"
-            android:src="@drawable/img_circle_naranja"
+            android:src="@drawable/img_mailsend"
+            android:scaleType="centerCrop"
             android:layout_marginTop="20dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
