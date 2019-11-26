@@ -10,9 +10,12 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.getbouncer.cardscan.ScanActivity;
@@ -39,6 +42,7 @@ import com.supermarket.shingshing.main.menu.opciones.agregar.NuevoListener;
 import com.supermarket.shingshing.main.menu.opciones.agregar.NuevoNumeroFragment;
 import com.supermarket.shingshing.main.populares.PopularesFragment;
 import com.supermarket.shingshing.main.producto.ProductoFragment;
+import com.supermarket.shingshing.main.producto.ProductoListener;
 import com.supermarket.shingshing.models.MedioBonificacionModel;
 import com.supermarket.shingshing.models.ProductoModel;
 import com.supermarket.shingshing.resultado.ResultadoActivity;
@@ -49,7 +53,7 @@ import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Objects;
 
-public class MainActivity extends AppCompatActivity implements MainListener, MenuListener, NuevoListener, RetiroListener, NoGuardadoListener {
+public class MainActivity extends AppCompatActivity implements MainListener, MenuListener, NuevoListener, RetiroListener, NoGuardadoListener, ProductoListener {
     private ActivityMainBinding binding;
     private boolean noGuardado;
 
@@ -112,12 +116,16 @@ public class MainActivity extends AppCompatActivity implements MainListener, Men
 
     @Override
     public void onClickPopulares(ArrayList<ProductoModel> productoModels) {
-        cargarFragment(PopularesFragment.newInstance(productoModels), null, false);
+        Bundle bundle = new Bundle();
+        bundle.putParcelableArrayList(PopularesFragment.KEY_PRODUCTOS, productoModels);
+        cargarFragment(new PopularesFragment(), bundle, false);
     }
 
     @Override
     public void onClickPopularProducto(ProductoModel producto) {
-        cargarFragment(ProductoFragment.newInstance(producto), null, false);
+        Bundle bundle = new Bundle();
+        bundle.putParcelable(ProductoFragment.KEY_PRODUCTO, producto);
+        cargarFragment(new ProductoFragment(), bundle, false);
     }
 
     @Override
@@ -247,6 +255,22 @@ public class MainActivity extends AppCompatActivity implements MainListener, Men
     public void onClickMostrarSnackbar(String mensaje) {
         onBackPressed();
         mostrarSnackbar(mensaje);
+    }
+
+    @Override
+    public void actualizarColorHeader(String[] colores) {
+        Window window = getWindow();
+        if (colores != null) {
+            binding.clMainTab.setBackgroundColor(Color.argb(255, Integer.parseInt(colores[0].trim()), Integer.parseInt(colores[1].trim()), Integer.parseInt(colores[2].trim())));
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.argb(255, Integer.parseInt(colores[0].trim()), Integer.parseInt(colores[1].trim()), Integer.parseInt(colores[2].trim())));
+        } else {
+            binding.clMainTab.setBackgroundColor(ContextCompat.getColor(this, R.color.blanco));
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(ContextCompat.getColor(this, R.color.blanco));
+        }
     }
 
     private void mostrarSnackbar(String mensaje) {
