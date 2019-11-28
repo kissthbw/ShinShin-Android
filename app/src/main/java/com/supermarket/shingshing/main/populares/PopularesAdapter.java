@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.supermarket.shingshing.R;
 import com.supermarket.shingshing.databinding.ItemPopularesBinding;
+import com.supermarket.shingshing.main.MainListener;
 import com.supermarket.shingshing.models.ProductoModel;
 
 import java.util.ArrayList;
@@ -16,8 +17,10 @@ import java.util.Locale;
 
 public class PopularesAdapter extends RecyclerView.Adapter<PopularesAdapter.PopularesViewHolder> {
     private ArrayList<ProductoModel> productoModels;
+    private MainListener listener;
 
-    public PopularesAdapter(ArrayList<ProductoModel> productoModels) {
+    PopularesAdapter(MainListener listener, ArrayList<ProductoModel> productoModels) {
+        this.listener = listener;
         this.productoModels = productoModels;
     }
 
@@ -50,6 +53,7 @@ public class PopularesAdapter extends RecyclerView.Adapter<PopularesAdapter.Popu
             binding.tvPopularesNombre.setText(producto.getNombreProducto());
             binding.tvPopularesCantidad.setText(producto.getContenido());
             binding.tvPopularesPrecio.setText(String.format(Locale.US, "$%d", producto.getCantidadBonificacion()));
+            binding.clPopularesContainer.setOnClickListener(v -> listener.onClickPopularProducto(producto));
         }
     }
 }

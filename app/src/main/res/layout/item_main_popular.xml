@@ -33,7 +33,7 @@
 					android:layout_width="70dp"
 					android:layout_height="70dp"
 					android:scaleType="fitCenter"
-					android:src="@drawable/img_barrilito"
+					android:src="@drawable/img_bonafont"
 					app:layout_constraintStart_toStartOf="parent"
 					app:layout_constraintEnd_toEndOf="parent"
 					app:layout_constraintTop_toTopOf="parent"
