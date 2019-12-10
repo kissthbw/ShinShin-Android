@@ -4,9 +4,11 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
 import com.supermarket.shingshing.R;
 import com.supermarket.shingshing.databinding.ItemMainPopularBinding;
 import com.supermarket.shingshing.main.principal.listener.PopularListener;
@@ -54,6 +56,11 @@ public class PopularAdapter extends RecyclerView.Adapter<PopularAdapter.PopularV
         }
 
         void setDatos(ProductoModel producto) {
+            if (producto.getImgUrl() != null && !producto.getImgUrl().trim().isEmpty()) {
+                Picasso.get().load(producto.getImgUrl()).into(binding.ivItemPopularImagen);
+            } else {
+                binding.ivItemPopularImagen.setImageDrawable(ContextCompat.getDrawable(binding.ivItemPopularImagen.getContext(), R.drawable.img_bonafont));
+            }
             binding.tvItemPopularNombre.setText(producto.getNombreProducto());
             binding.tvItemPopularCantidad.setText(producto.getContenido());
             binding.tvItemPopularPrecio.setText(String.format(Locale.US, "$%d", producto.getCantidadBonificacion()));

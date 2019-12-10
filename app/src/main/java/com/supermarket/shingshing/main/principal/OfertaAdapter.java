@@ -1,11 +1,11 @@
 package com.supermarket.shingshing.main.principal;
 
 import android.graphics.Color;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -57,8 +57,10 @@ public class OfertaAdapter extends RecyclerView.Adapter<OfertaAdapter.OfertaView
         }
 
         void setDatos(ProductoModel producto) {
-            if (producto.getUrlImagenProducto() != null && !producto.getUrlImagenProducto().trim().isEmpty()) {
-                //Picasso.get().load(usuario.getImgUrl()).into(binding.ivItemOfertaImagen);
+            if (producto.getImgUrl() != null && !producto.getImgUrl().trim().isEmpty()) {
+                Picasso.get().load(producto.getImgUrl()).into(binding.ivItemOfertaImagen);
+            } else {
+                binding.ivItemOfertaImagen.setImageDrawable(ContextCompat.getDrawable(binding.ivItemOfertaImagen.getContext(), R.drawable.img_bonafont));
             }
             binding.tvItemOfertaNombre.setText(producto.getNombreProducto());
             binding.tvItemOfertaCantidad.setText(producto.getContenido());

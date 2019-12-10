@@ -18,6 +18,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.squareup.picasso.Picasso;
 import com.supermarket.shingshing.R;
 import com.supermarket.shingshing.databinding.FragmentProductoBinding;
 import com.supermarket.shingshing.main.principal.TiendaAdapter;
@@ -58,6 +59,9 @@ public class ProductoFragment extends Fragment {
 
     private void iniciarVista() {
         if (producto != null) {
+            if (producto.getImgUrl() != null && !producto.getImgUrl().trim().isEmpty()) {
+                Picasso.get().load(producto.getImgUrl()).into(binding.ivProductoImagen);
+            }
             binding.tvProductoNombre.setText(producto.getNombreProducto());
             binding.tvProductoCantidad.setText(producto.getContenido());
             binding.tvPopularesPrecio.setText(String.format(Locale.US, "$%d", producto.getCantidadBonificacion()));

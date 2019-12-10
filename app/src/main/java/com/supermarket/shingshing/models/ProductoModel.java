@@ -20,6 +20,7 @@ public class ProductoModel implements Parcelable {
     private CatalogoMarcaModel catalogoMarca;
     private TipoProductoModel catalogoTipoProducto;
     private TiendaModel catalogoTienda;
+    private String imgUrl;
 
     public ProductoModel() {}
 
@@ -27,128 +28,68 @@ public class ProductoModel implements Parcelable {
         return idProducto;
     }
 
-    public void setIdProducto(int idProducto) {
-        this.idProducto = idProducto;
-    }
-
     public String getNombreProducto() {
         return nombreProducto;
-    }
-
-    public void setNombreProducto(String nombreProducto) {
-        this.nombreProducto = nombreProducto;
     }
 
     public float getPrecio() {
         return precio;
     }
 
-    public void setPrecio(float precio) {
-        this.precio = precio;
-    }
-
     public String getCodigoBarras() {
         return codigoBarras;
-    }
-
-    public void setCodigoBarras(String codigoBarras) {
-        this.codigoBarras = codigoBarras;
     }
 
     public String getPresentacion() {
         return presentacion;
     }
 
-    public void setPresentacion(String presentacion) {
-        this.presentacion = presentacion;
-    }
-
     public String getContenido() {
         return contenido;
-    }
-
-    public void setContenido(String contenido) {
-        this.contenido = contenido;
     }
 
     public String getDescripcion() {
         return descripcion;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
     public boolean isAplicaPromocion() {
         return aplicaPromocion;
-    }
-
-    public void setAplicaPromocion(boolean aplicaPromocion) {
-        this.aplicaPromocion = aplicaPromocion;
     }
 
     public String getVigenciaPromocion() {
         return vigenciaPromocion;
     }
 
-    public void setVigenciaPromocion(String vigenciaPromocion) {
-        this.vigenciaPromocion = vigenciaPromocion;
-    }
-
     public String getUrlImagenProducto() {
         return urlImagenProducto;
-    }
-
-    public void setUrlImagenProducto(String urlImagenProducto) {
-        this.urlImagenProducto = urlImagenProducto;
     }
 
     public int getCantidadBonificacion() {
         return cantidadBonificacion;
     }
 
-    public void setCantidadBonificacion(int cantidadBonificacion) {
-        this.cantidadBonificacion = cantidadBonificacion;
-    }
-
     public boolean isBanner() {
         return banner;
-    }
-
-    public void setBanner(boolean banner) {
-        this.banner = banner;
     }
 
     public String getColorBanner() {
         return colorBanner;
     }
 
-    public void setColorBanner(String colorBanner) {
-        this.colorBanner = colorBanner;
-    }
-
     public CatalogoMarcaModel getCatalogoMarca() {
         return catalogoMarca;
-    }
-
-    public void setCatalogoMarca(CatalogoMarcaModel catalogoMarca) {
-        this.catalogoMarca = catalogoMarca;
     }
 
     public TipoProductoModel getCatalogoTipoProducto() {
         return catalogoTipoProducto;
     }
 
-    public void setCatalogoTipoProducto(TipoProductoModel catalogoTipoProducto) {
-        this.catalogoTipoProducto = catalogoTipoProducto;
-    }
-
     public TiendaModel getCatalogoTienda() {
         return catalogoTienda;
     }
 
-    public void setCatalogoTienda(TiendaModel catalogoTienda) {
-        this.catalogoTienda = catalogoTienda;
+    public String getImgUrl() {
+        return imgUrl;
     }
 
     protected ProductoModel(Parcel in) {
@@ -168,23 +109,7 @@ public class ProductoModel implements Parcelable {
         catalogoMarca = in.readParcelable(CatalogoMarcaModel.class.getClassLoader());
         catalogoTipoProducto = in.readParcelable(TipoProductoModel.class.getClassLoader());
         catalogoTienda = in.readParcelable(TiendaModel.class.getClassLoader());
-    }
-
-    public static final Creator<ProductoModel> CREATOR = new Creator<ProductoModel>() {
-        @Override
-        public ProductoModel createFromParcel(Parcel in) {
-            return new ProductoModel(in);
-        }
-
-        @Override
-        public ProductoModel[] newArray(int size) {
-            return new ProductoModel[size];
-        }
-    };
-
-    @Override
-    public int describeContents() {
-        return 0;
+        imgUrl = in.readString();
     }
 
     @Override
@@ -205,27 +130,23 @@ public class ProductoModel implements Parcelable {
         dest.writeParcelable(catalogoMarca, flags);
         dest.writeParcelable(catalogoTipoProducto, flags);
         dest.writeParcelable(catalogoTienda, flags);
+        dest.writeString(imgUrl);
     }
 
     @Override
-    public String toString() {
-        return "ProductoModel{" +
-                "idProducto=" + idProducto +
-                ", nombreProducto='" + nombreProducto + '\'' +
-                ", precio=" + precio +
-                ", codigoBarras='" + codigoBarras + '\'' +
-                ", presentacion='" + presentacion + '\'' +
-                ", contenido='" + contenido + '\'' +
-                ", descripcion='" + descripcion + '\'' +
-                ", aplicaPromocion=" + aplicaPromocion +
-                ", vigenciaPromocion='" + vigenciaPromocion + '\'' +
-                ", urlImagenProducto='" + urlImagenProducto + '\'' +
-                ", cantidadBonificacion=" + cantidadBonificacion +
-                ", banner=" + banner +
-                ", colorBanner='" + colorBanner + '\'' +
-                ", catalogoMarca=" + catalogoMarca +
-                ", catalogoTipoProducto=" + catalogoTipoProducto +
-                ", catalogoTienda=" + catalogoTienda +
-                '}';
+    public int describeContents() {
+        return 0;
     }
+
+    public static final Creator<ProductoModel> CREATOR = new Creator<ProductoModel>() {
+        @Override
+        public ProductoModel createFromParcel(Parcel in) {
+            return new ProductoModel(in);
+        }
+
+        @Override
+        public ProductoModel[] newArray(int size) {
+            return new ProductoModel[size];
+        }
+    };
 }
