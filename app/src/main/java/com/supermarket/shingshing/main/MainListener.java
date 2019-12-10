@@ -9,4 +9,5 @@ public interface MainListener {
     void onClickPopularProducto(ProductoModel producto);
     void onClickTicketResult();
     void onMostrarSnackbar(String mensaje);
+    void onHeaderWhite();
 }

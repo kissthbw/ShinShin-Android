@@ -139,6 +139,11 @@ public class MainActivity extends AppCompatActivity implements MainListener, Men
     }
 
     @Override
+    public void onHeaderWhite() {
+        actualizarColorHeader(null);
+    }
+
+    @Override
     public void onClickMenuItem(int opcion) {
         binding.dlMainDrawer.closeDrawer(Gravity.RIGHT, true);
         switch (opcion) {
@@ -249,6 +254,10 @@ public class MainActivity extends AppCompatActivity implements MainListener, Men
         binding.ivMainMenu.setImageDrawable(ContextCompat.getDrawable(this, visible ? R.drawable.ic_menu_grey : R.drawable.ic_menu_white));
         binding.clMainSaldo.setVisibility(visible ? View.VISIBLE : View.GONE);
         binding.vMainSeparator.setVisibility(visible ? View.VISIBLE : View.GONE);
+        Window window = getWindow();
+        window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        window.setStatusBarColor(ContextCompat.getColor(this, visible ? R.color.blanco: R.color.naranja));
     }
 
     @Override

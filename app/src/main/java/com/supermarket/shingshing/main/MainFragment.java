@@ -61,6 +61,7 @@ public class MainFragment extends Fragment implements PopularListener {
 
         iniciarVistas();
         obtenerDatos();
+        listener.onHeaderWhite();
 
         return binding.getRoot();
     }
