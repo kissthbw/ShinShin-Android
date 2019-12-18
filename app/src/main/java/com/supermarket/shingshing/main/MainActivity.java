@@ -9,9 +9,13 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
@@ -20,6 +24,8 @@ import android.widget.TextView;
 
 import com.getbouncer.cardscan.ScanActivity;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.supermarket.shingshing.R;
 import com.supermarket.shingshing.databinding.ActivityMainBinding;
 import com.supermarket.shingshing.main.alerta.AlertasFragment;
@@ -54,6 +60,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity implements MainListener, MenuListener, NuevoListener, RetiroListener, NoGuardadoListener, ProductoListener {
+    private static final String TAG = MainActivity.class.getSimpleName();
     private ActivityMainBinding binding;
     private boolean noGuardado;
 
@@ -62,6 +69,7 @@ public class MainActivity extends AppCompatActivity implements MainListener, Men
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         iniciarVistas();
+        configuarNotificaciones();
     }
 
     @Override
@@ -323,5 +331,46 @@ public class MainActivity extends AppCompatActivity implements MainListener, Men
     @Override
     public void onEditar(boolean noGuardado) {
         this.noGuardado = noGuardado;
+    }
+
+    private void configuarNotificaciones() {
+        configurarCanal();
+        generarTokenNotificacion();
+        subscribirTopicNotificacion();
+    }
+
+    private void configurarCanal() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            String channelId  = getString(R.string.default_notification_channel_id);
+            String channelName = getString(R.string.default_notification_channel_name);
+            NotificationManager notificationManager =
+                    getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(new NotificationChannel(channelId,
+                    channelName, NotificationManager.IMPORTANCE_LOW));
+        }
+    }
+
+    private void generarTokenNotificacion() {
+        FirebaseInstanceId.getInstance().getInstanceId()
+                .addOnCompleteListener(task -> {
+                    if (!task.isSuccessful()) {
+                        Log.w(TAG, "No se pudo obtener el Id", task.getException());
+                        return;
+                    }
+
+                    String token = task.getResult().getToken();
+                    Log.d(TAG, "TOKEN: " + token);
+                });
+    }
+
+    private void subscribirTopicNotificacion() {
+        FirebaseMessaging.getInstance().subscribeToTopic("shingshing")
+                .addOnCompleteListener(task -> {
+                    String msg = "Subscrito topic";
+                    if (!task.isSuccessful()) {
+                        msg = "NO subscrito al topic";
+                    }
+                    Log.d(TAG, msg);
+                });
     }
 }

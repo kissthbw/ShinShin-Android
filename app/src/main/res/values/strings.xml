@@ -457,4 +457,8 @@
         <item>$200</item>
         <item>$500</item>
     </string-array>
+
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="default_notification_channel_name" translatable="true">Shing</string>
+
 </resources>
