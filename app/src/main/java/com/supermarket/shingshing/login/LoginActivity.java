@@ -33,6 +33,7 @@ import com.supermarket.shingshing.crear.CrearCuentaActivity;
 import com.supermarket.shingshing.databinding.ActivityLoginBinding;
 import com.supermarket.shingshing.main.MainActivity;
 import com.supermarket.shingshing.models.LoginModel;
+import com.supermarket.shingshing.models.UsuarioModel;
 import com.supermarket.shingshing.network.ApiClient;
 import com.supermarket.shingshing.network.ApiService;
 import com.supermarket.shingshing.privacidad.PrivacidadActivity;
@@ -134,7 +135,6 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void login() {
-        //irActivity(AyudaTourActivity.class);
         binding.btnLoginIniciar.setEnabled(false);
         String correo = binding.etLoginCorreo.getText().toString();
         String contrasena = binding.etLoginContrasena.getText().toString();
@@ -184,13 +184,7 @@ public class LoginActivity extends AppCompatActivity {
                     UtilsView.esconderProgress();
                     binding.btnLoginIniciar.setEnabled(true);
                     if (result.getCode() == 200) {
-                        result.getUsuario().setIdRedSocial(0);
-                        result.getUsuario().setBonificacion(result.getBonificacion());
-                        UsuarioSingleton.getInstance(result.getUsuario());
-                        UserPreferences.setLoginUser(this, new LoginModel(LoginModel.TIPO_CORREO));
-                        Utils.guardarArchivoUsuario(this, result.getUsuario());
-                        irActivity(MainActivity.class);
-                        finish();
+                        guardarUsuario(result.getUsuario(), result.getBonificacion());
                     } else {
                         UtilsView.mostrarAlerta(this, null, getString(R.string.login_error_servicio), getString(R.string.general_button_aceptar));
                     }
@@ -199,6 +193,22 @@ public class LoginActivity extends AppCompatActivity {
                     binding.btnLoginIniciar.setEnabled(true);
                     Log.e(TAG, "Login error: " + throwable.getLocalizedMessage());
                 });
+    }
+
+    private void guardarUsuario(UsuarioModel usuario, int bonificacion) {
+        usuario.setIdRedSocial(0);
+        usuario.setBonificacion(bonificacion);
+        UsuarioSingleton.getInstance(usuario);
+        UserPreferences.setLoginUser(this, new LoginModel(LoginModel.TIPO_CORREO));
+        Utils.guardarArchivoUsuario(this, usuario);
+        String email = UserPreferences.getEmailUser(this);
+        if (email != null && email.equalsIgnoreCase(usuario.getCorreoElectronico())) {
+            irActivity(MainActivity.class);
+        } else {
+            UserPreferences.setEmailUser(this, usuario.getCorreoElectronico());
+            irActivity(IntroActivity.class);
+        }
+        finish();
     }
 
     private void irActivity(Class clase) {

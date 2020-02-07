@@ -5,11 +5,13 @@ import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import com.supermarket.shingshing.R;
 import com.supermarket.shingshing.databinding.ActivityIntroBinding;
+import com.supermarket.shingshing.main.MainActivity;
 
 public class IntroActivity extends AppCompatActivity {
     private final static float MIN_SCALE = 0.65f;
@@ -25,9 +27,9 @@ public class IntroActivity extends AppCompatActivity {
     }
 
     private void iniciarVistas() {
-        binding.btnIntroOmitir.setOnClickListener(v -> finish());
+        binding.btnIntroOmitir.setOnClickListener(v -> terminar());
         binding.btnIntroSiguiente.setOnClickListener(v -> siguiente());
-        binding.btnIntroListo.setOnClickListener(v -> finish());
+        binding.btnIntroListo.setOnClickListener(v -> terminar());
 
         binding.vpIntroPager.setAdapter(new IntroAdapter(this));
         binding.vpIntroPager.setPageTransformer(this::zoomTransformacion);
@@ -38,6 +40,11 @@ public class IntroActivity extends AppCompatActivity {
                 listenerDots(position);
             }
         });
+    }
+
+    private void terminar() {
+        startActivity(new Intent(this, MainActivity.class));
+        finish();
     }
 
     private void siguiente() {
