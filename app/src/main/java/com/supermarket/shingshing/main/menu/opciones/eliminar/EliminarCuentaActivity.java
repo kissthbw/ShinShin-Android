@@ -4,8 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 import com.google.gson.JsonObject;
 import com.supermarket.shingshing.R;
@@ -32,13 +36,20 @@ public class EliminarCuentaActivity extends AppCompatActivity {
     }
 
     private void iniciarVistas() {
+        crearSpinnerMotivo();
         binding.btnEliminarCuentaEliminar.setOnClickListener(v -> obtenerDatos());
         binding.tvEliminarCuentaRegresar.setOnClickListener(v -> finish());
     }
 
+    private void crearSpinnerMotivo() {
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.options_motivo, R.layout.item_spinner);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        binding.sEliminarCuentaMotivo.setAdapter(adapter);
+    }
+
     private void obtenerDatos() {
         binding.btnEliminarCuentaEliminar.setEnabled(false);
-        String motivo = binding.etEliminarCuentaMotivo.getText().toString();
+        String motivo = binding.sEliminarCuentaMotivo.getSelectedItem().toString();
         String comentarios = binding.etEliminarCuentaComentarios.getText().toString();
 
         if (validarDatos(motivo, comentarios)) {
@@ -51,17 +62,23 @@ public class EliminarCuentaActivity extends AppCompatActivity {
     }
 
     private boolean validarDatos(String motivo, String comentarios) {
-        if (motivo.trim().isEmpty()) {
-            binding.etEliminarCuentaMotivo.setError("Favor de ingresar un motivo");
-            binding.etEliminarCuentaMotivo.requestFocus();
+        if (motivo.trim().isEmpty() || motivo.equalsIgnoreCase(getString(R.string.msg_selecciona))) {
+            View selectedView = binding.sEliminarCuentaMotivo.getSelectedView();
+            if (selectedView instanceof TextView) {
+                binding.sEliminarCuentaMotivo.requestFocus();
+                TextView selectedTextView = (TextView) selectedView;
+                selectedTextView.setError(getString(R.string.msg_selecciona));
+                selectedTextView.setTextColor(Color.RED);
+                selectedTextView.setText(getString(R.string.msg_selecciona));
+            }
             return false;
         }
 
-//        if (comentarios.trim().isEmpty()) {
-//            binding.etEliminarCuentaComentarios.setError("Favor de ingresar un comentario");
-//            binding.etEliminarCuentaComentarios.requestFocus();
-//            return false;
-//        }
+        if (comentarios.trim().isEmpty()) {
+            binding.etEliminarCuentaComentarios.setError(getString(R.string.eliminar_error_comentario));
+            binding.etEliminarCuentaComentarios.requestFocus();
+            return false;
+        }
 
         return true;
     }

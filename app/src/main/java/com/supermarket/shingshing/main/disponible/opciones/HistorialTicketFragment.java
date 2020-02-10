@@ -1,6 +1,7 @@
 package com.supermarket.shingshing.main.disponible.opciones;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -19,6 +20,7 @@ import com.google.gson.JsonObject;
 import com.supermarket.shingshing.R;
 import com.supermarket.shingshing.databinding.FragmentHistorialTicketBinding;
 import com.supermarket.shingshing.main.disponible.opciones.adapters.HistorialTicketAdapter;
+import com.supermarket.shingshing.main.ocr.CameraActivity;
 import com.supermarket.shingshing.network.ApiClient;
 import com.supermarket.shingshing.network.ApiService;
 import com.supermarket.shingshing.util.UsuarioSingleton;
@@ -64,6 +66,8 @@ public class HistorialTicketFragment extends Fragment {
                         binding.rvTicketsLista.setLayoutManager(new LinearLayoutManager(getContext(), RecyclerView.VERTICAL, false));
                         binding.rvTicketsLista.addItemDecoration(new DividerItemDecoration(binding.rvTicketsLista.getContext(), DividerItemDecoration.VERTICAL));
                         binding.rvTicketsLista.setAdapter(new HistorialTicketAdapter(listener, result.getTickets()));
+                    } else {
+                        binding.btnTicketsSubir.setOnClickListener(v -> startActivity(new Intent(getActivity(), CameraActivity.class)));
                     }
                 }, throwable -> {
                     Log.e(TAG, "Error historial tickets: " + throwable.getLocalizedMessage());

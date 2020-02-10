@@ -53,6 +53,9 @@ public class CrearCuentaActivity extends AppCompatActivity implements TextWatche
         crearSpinnerSexo();
         binding.btnCrearCuenta.setOnClickListener(v -> obtenerDatos());
         binding.clCrearFecha.setOnClickListener(v -> obtenerFecha());
+        binding.tvCrearMes.setOnClickListener(v -> obtenerFecha());
+        binding.tvCrearDia.setOnClickListener(v -> obtenerFecha());
+        binding.tvCrearAnio.setOnClickListener(v -> obtenerFecha());
         binding.tvCrearTerminos.setOnClickListener(v -> startActivity(new Intent(this, TerminosActivity.class)));
         binding.tvCrearPrivacidad.setOnClickListener(v -> startActivity(new Intent(this, PrivacidadActivity.class)));
         binding.cbCrearAceptarTC.setOnCheckedChangeListener((buttonView, isChecked) -> binding.cbCrearAceptarTC.setError(null));
@@ -162,9 +165,9 @@ public class CrearCuentaActivity extends AppCompatActivity implements TextWatche
             if (selectedView instanceof TextView) {
                 binding.sCrearSexo.requestFocus();
                 TextView selectedTextView = (TextView) selectedView;
-                selectedTextView.setError(getString(R.string.msg_selecciona)); // any name of the error will do
-                selectedTextView.setTextColor(Color.RED); //text color in which you want your error message to be displayed
-                selectedTextView.setText(getString(R.string.msg_selecciona)); // actual error message
+                selectedTextView.setError(getString(R.string.msg_selecciona));
+                selectedTextView.setTextColor(Color.RED);
+                selectedTextView.setText(getString(R.string.msg_selecciona));
             }
             return false;
         }

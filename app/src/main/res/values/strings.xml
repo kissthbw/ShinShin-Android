@@ -110,7 +110,7 @@
     <string name="bienvenido_title">¡Si, eres tu!</string>
 
     <!--**************** Bienvenido ****************-->
-    <string name="bienvenido_msg">Es hora de subir todos tickets y\nganar dinero por tus compras.</string>
+    <string name="bienvenido_msg">Es hora de subir todos tus tickets y\nganar dinero por tus compras.</string>
     <string name="bienvenido_button_empezar">¡Empecemos!</string>
     <string name="perfil_title">Perfil</string>
 
@@ -216,6 +216,13 @@
     <!--**************** Eliminar ****************-->
     <string name="eliminar_cuenta_motivo">Motivo</string>
     <string name="eliminar_cuenta_comentarios">Comentarios</string>
+
+    <string name="eliminar_msg1">Tengo otra cuenta Shing Shing</string>
+    <string name="eliminar_msg2">Casi no utilizo la App</string>
+    <string name="eliminar_msg3">Faltan productos en la App</string>
+    <string name="eliminar_msg4">Otro</string>
+
+    <string name="eliminar_error_comentario">Favor de ingresar un comentario</string>
 
     <string name="eliminar_cuenta_regresar">Regresar a Shing Shing</string>
     <string name="eliminar_cuenta_despedida">Las despedidas siempre\nson tristes, pero <b>confiamos\nque pronto estes de regreso\npor acá ;-)</b></string>
@@ -406,6 +413,14 @@
         <item>@string/msg_selecciona</item>
         <item>@string/msg_femenino</item>
         <item>@string/msg_masculino</item>
+    </string-array>
+
+    <string-array name="options_motivo">
+        <item>@string/msg_selecciona</item>
+        <item>@string/eliminar_msg1</item>
+        <item>@string/eliminar_msg2</item>
+        <item>@string/eliminar_msg3</item>
+        <item>@string/eliminar_msg4</item>
     </string-array>
 
     <string-array name="options_mes">
