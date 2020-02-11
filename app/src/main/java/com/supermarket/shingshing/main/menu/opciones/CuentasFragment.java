@@ -131,8 +131,14 @@ public class CuentasFragment extends Fragment {
     }
 
     private void setListasAdapters() {
-        bancariaAdapter.setDatos(bancariaList);
-        paypalAdapter.setDatos(paypalList);
-        recargaAdapter.setDatos(recargaList);
+        if (bancariaList != null) {
+            bancariaAdapter.setDatos(bancariaList);
+        }
+        if (paypalList != null) {
+            paypalAdapter.setDatos(paypalList);
+        }
+        if (recargaList != null) {
+            recargaAdapter.setDatos(recargaList);
+        }
     }
 }

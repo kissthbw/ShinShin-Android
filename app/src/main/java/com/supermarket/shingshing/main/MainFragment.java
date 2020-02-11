@@ -1,10 +1,12 @@
 package com.supermarket.shingshing.main;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
@@ -19,6 +21,7 @@ import com.google.gson.JsonObject;
 import com.supermarket.shingshing.R;
 import com.supermarket.shingshing.databinding.FragmentMainBinding;
 import com.supermarket.shingshing.main.ocr.CameraActivity;
+import com.supermarket.shingshing.main.ocr.ayuda.AyudaCamaraActivity;
 import com.supermarket.shingshing.main.principal.DepartamentoAdapter;
 import com.supermarket.shingshing.main.principal.OfertaAdapter;
 import com.supermarket.shingshing.main.principal.PopularAdapter;
@@ -26,6 +29,7 @@ import com.supermarket.shingshing.main.principal.listener.PopularListener;
 import com.supermarket.shingshing.models.ProductoModel;
 import com.supermarket.shingshing.network.ApiClient;
 import com.supermarket.shingshing.network.ApiService;
+import com.supermarket.shingshing.util.UserPreferences;
 import com.supermarket.shingshing.util.UsuarioSingleton;
 import com.supermarket.shingshing.util.UtilsView;
 
@@ -37,6 +41,7 @@ import io.reactivex.schedulers.Schedulers;
 
 public class MainFragment extends Fragment implements PopularListener {
     private static final String TAG = MainFragment.class.getSimpleName();
+    private final int LAUNCH_AYUDA = 10;
     private FragmentMainBinding binding;
     private MainListener listener;
     private ApiService apiService;
@@ -64,6 +69,13 @@ public class MainFragment extends Fragment implements PopularListener {
         listener.onHeaderWhite();
 
         return binding.getRoot();
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (resultCode == Activity.RESULT_OK && requestCode == LAUNCH_AYUDA) {
+            lanzarCamaraTicket();
+        }
     }
 
     private void iniciarVistas() {
@@ -153,7 +165,18 @@ public class MainFragment extends Fragment implements PopularListener {
     }
 
     private void lanzarCamaraTicket() {
-        startActivity(new Intent(getActivity(), CameraActivity.class));
+        String email = UserPreferences.getEmailAyuda(getContext());
+        if (email != null && email.equalsIgnoreCase(UsuarioSingleton.getUsuario().getCorreoElectronico())) {
+            startActivity(new Intent(getActivity(), CameraActivity.class));
+        } else {
+            lanzarCameraAyuda();
+        }
+    }
+
+    private void lanzarCameraAyuda() {
+        UserPreferences.setEmailAyuda(getContext(), UsuarioSingleton.getUsuario().getCorreoElectronico());
+        Intent i = new Intent(getActivity(), AyudaCamaraActivity.class);
+        startActivityForResult(i, LAUNCH_AYUDA);
     }
 
     private void obtenerDatoSugerencia() {

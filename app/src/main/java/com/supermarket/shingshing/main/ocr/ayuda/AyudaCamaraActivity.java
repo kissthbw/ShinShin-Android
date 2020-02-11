@@ -5,6 +5,8 @@ import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -15,6 +17,7 @@ public class AyudaCamaraActivity extends AppCompatActivity {
     private final static float MIN_SCALE = 0.65f;
     private final static float MIN_ALPHA = 0.3f;
     private ActivityAyudaCamaraBinding binding;
+    private boolean regresar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,12 +25,13 @@ public class AyudaCamaraActivity extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_ayuda_camara);
 
         iniciarVistas();
+        regresar = getCallingActivity() != null;
     }
 
     private void iniciarVistas() {
-        binding.btnAyudaSalir.setOnClickListener(v -> finish());
+        binding.btnAyudaSalir.setOnClickListener(v -> terminar());
         binding.btnAyudaSiguiente.setOnClickListener(v -> siguiente());
-        binding.btnAyudaListo.setOnClickListener(v -> finish());
+        binding.btnAyudaListo.setOnClickListener(v -> terminar());
 
         binding.vpAyudaPager.setAdapter(new AyudaCamaraAdapter(this));
         binding.vpAyudaPager.setPageTransformer(this::zoomTransformacion);
@@ -38,6 +42,13 @@ public class AyudaCamaraActivity extends AppCompatActivity {
                 listenerDots(position);
             }
         });
+    }
+
+    private void terminar() {
+        if (regresar) {
+            setResult(Activity.RESULT_OK, new Intent());
+        }
+        finish();
     }
 
     private void siguiente() {

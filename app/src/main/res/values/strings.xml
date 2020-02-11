@@ -125,7 +125,7 @@
     <string name="perfil_msg_confirmar_contrasena">Confirmar tu contraseña nueva</string>
 
     <!--**************** Cuentas ****************-->
-    <string name="cuentas_title_bancaria">Bancario</string>
+    <string name="cuentas_title_bancaria">Bancaria</string>
     <string name="cuentas_title_paypal">PayPal</string>
     <string name="cuentas_title_recarga_uno">Recarga</string>
     <string name="cuentas_title_recarga">Recarga Telefónica</string>
@@ -240,7 +240,7 @@
     <string name="camara_btn_ok">OK</string>
     <string name="camara_btn_borrar">Borrar</string>
     <string name="camara_msg_texto_ticket">Si tu Ticket es muy largo,\nno te apures, tomalo en varias fotos ;-)</string>
-    <string name="ayuda_camara_msg1">Coloca tu dispositivo encima\nde tu ticket, a 30 cm. aprox.</string>
+    <string name="ayuda_camara_msg1">Coloca tu dispositivo a unos\n10 cm. del ticket, este debe ocupar\nel ancho del marco delimitado.</string>
     <string name="ayuda_camara_msg2">Verifica que tu Ticket este\ndentro del área marcada</string>
     <string name="ayuda_camara_msg3">En caso de que tu Ticket este\nmuy largo, tómalo en varias fotos</string>
     <string name="ayuda_camara_msg4">Procura tener limpio el lente\nde tu cámara y buena iluminación.</string>

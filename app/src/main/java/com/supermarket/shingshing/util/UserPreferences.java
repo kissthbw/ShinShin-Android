@@ -8,6 +8,7 @@ import com.supermarket.shingshing.models.LoginModel;
 public class UserPreferences {
     private static final String KEY_TIPO = "loginTipo";
     private static final String KEY_EMAIL = "email";
+    private static final String KEY_AYUDA = "ayuda";
 
     public UserPreferences() {}
 
@@ -33,5 +34,15 @@ public class UserPreferences {
 
     public static String getEmailUser(Context context) {
         return getSharedPreferences(context).getString(KEY_EMAIL, null);
+    }
+
+    public static void setEmailAyuda(Context context, String email) {
+        SharedPreferences.Editor editor = getSharedPreferences(context).edit();
+        editor.putString(KEY_AYUDA, email);
+        editor.apply();
+    }
+
+    public static String getEmailAyuda(Context context) {
+        return getSharedPreferences(context).getString(KEY_AYUDA, null);
     }
 }

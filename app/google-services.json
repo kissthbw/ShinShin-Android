@@ -1,43 +1,42 @@
 {
   "project_info": {
-    "project_number": "984876743438",
-    "firebase_url": "https://shing-shing-java.firebaseio.com",
-    "project_id": "shing-shing-java",
-    "storage_bucket": "shing-shing-java.appspot.com"
+    "project_number": "363991809414",
+    "firebase_url": "https://shingshing-69c1f.firebaseio.com",
+    "project_id": "shingshing-69c1f",
+    "storage_bucket": "shingshing-69c1f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:984876743438:android:ec81f606f95595b7",
+        "mobilesdk_app_id": "1:363991809414:android:fa15b0f6ddcd1795b24007",
         "android_client_info": {
           "package_name": "com.supermarket.shingshing"
         }
       },
       "oauth_client": [
         {
-          "client_id": "984876743438-0iuo6livn78n0updt8hhpinok4rggj6d.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.supermarket.shingshing",
-            "certificate_hash": "4a1d7a44d4f89be8bb45abda65f9d5334b721250"
-          }
-        },
-        {
-          "client_id": "984876743438-7ff2rnk0t8t5up0o41ublj9cvju5ar4v.apps.googleusercontent.com",
+          "client_id": "363991809414-ebf4rktfcmqmsvdea3tbng9g2nbous62.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAi4Ji54YM9V7neuNTiQPMsUH68EGO1Owo"
+          "current_key": "AIzaSyB23HdJAnOUFAQbjBMi98vzHFeqVnAT9No"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "984876743438-7ff2rnk0t8t5up0o41ublj9cvju5ar4v.apps.googleusercontent.com",
+              "client_id": "363991809414-663kb2dc4jlkmivea673vdelsggceh0n.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "363991809414-6osgmq12a6aa4cte1crgjia535bqntkv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.bit.ShinShin"
+              }
             }
           ]
         }

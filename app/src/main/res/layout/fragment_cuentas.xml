@@ -73,14 +73,24 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
+            <View
+                android:id="@+id/vCuentasSeparator1"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@android:color/darker_gray"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/rvCuentasBancaria"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
             <ImageView
                 android:id="@+id/ivCuentasPaypal"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@drawable/ic_paypal_grey"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="40dp"
-                app:layout_constraintTop_toBottomOf="@+id/rvCuentasBancaria"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@+id/vCuentasSeparator1"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:ignore="ContentDescription" />
 
@@ -119,14 +129,24 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
 
+            <View
+                android:id="@+id/vCuentasSeparator2"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@android:color/darker_gray"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/rvCuentasPaypal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
             <ImageView
                 android:id="@+id/ivCuentasRecarga"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@drawable/ic_movil_grey"
                 android:layout_marginStart="15dp"
-                android:layout_marginTop="40dp"
-                app:layout_constraintTop_toBottomOf="@+id/rvCuentasPaypal"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@+id/vCuentasSeparator2"
                 app:layout_constraintStart_toStartOf="parent"
                 tools:ignore="ContentDescription" />
 

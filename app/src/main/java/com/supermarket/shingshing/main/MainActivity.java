@@ -159,6 +159,7 @@ public class MainActivity extends AppCompatActivity implements MainListener, Men
                 cargarFragment(new PerfilFragment(), null, false);
                 break;
             case MenuFragment.MENU_CUENTAS:
+                binding.vMainSeparator.setVisibility(View.VISIBLE);
                 cargarFragment(new CuentasFragment(), null, false);
                 break;
             case MenuFragment.MENU_AYUDA:
@@ -225,6 +226,7 @@ public class MainActivity extends AppCompatActivity implements MainListener, Men
 
     @Override
     public void mostrarCuentas() {
+        binding.vMainSeparator.setVisibility(View.VISIBLE);
         cargarFragment(new CuentasFragment(), null, false);
     }
 
