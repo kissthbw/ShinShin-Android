@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".privacidad.PrivacidadActivity">
 
@@ -20,187 +18,253 @@
                 style="@style/nunito_titulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/privacidad_title"/>
+                android:text="@string/privacidad_title" />
 
             <TextView
                 style="@style/nunito_texto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/privacidad_texto_intro"/>
+                android:layout_marginTop="10dp"
+                android:text="@string/privacidad_texto_intro" />
 
             <!--SECCION 01-->
             <TextView
                 style="@style/nunito_subtitulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/privacidad_texto_01_subtitulo"/>
+                android:text="@string/privacidad_texto_01_subtitulo" />
+
             <TextView
                 style="@style/nunito_texto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/privacidad_texto_01"/>
+                android:text="@string/privacidad_texto_01" />
+
             <!--SECCION 02-->
             <TextView
                 style="@style/nunito_subtitulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/privacidad_texto_02_subtitulo"/>
+                android:text="@string/privacidad_texto_02_subtitulo" />
+
             <TextView
                 style="@style/nunito_texto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/privacidad_texto_02"/>
+                android:text="@string/privacidad_texto_02" />
+
             <!--SECCION 03-->
             <TextView
                 style="@style/nunito_subtitulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/privacidad_texto_03_subtitulo"/>
+                android:text="@string/privacidad_texto_03_subtitulo" />
+
             <TextView
                 style="@style/nunito_texto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/privacidad_texto_03a"/>
+                android:text="@string/privacidad_texto_03a" />
+
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <TableLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="6dp"
-                    android:orientation="vertical"
-                    android:background="#000000">
+                    android:background="#000000"
+                    android:orientation="vertical">
+
                     <TableRow>
+
                         <TextView
                             style="@style/nunito_table_header"
-                            android:text="Destinatario de los datos personales"/>
+                            android:layout_width="200dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/privacidad_tabla_header1" />
+
                         <TextView
                             style="@style/nunito_table_header"
-                            android:text="Finalidad"/>
+                            android:layout_width="200dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/privacidad_tabla_header2" />
+
                         <TextView
                             style="@style/nunito_table_header"
-                            android:text="Requiere del consentimiento"/>
+                            android:layout_width="140dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/privacidad_tabla_header3" />
+
                     </TableRow>
+
                     <TableRow>
+
                         <TextView
                             style="@style/nunito_table_cell"
-                            android:text="Instituciones bancarias"/>
+                            android:layout_width="200dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/privacidad_tabla_celda1" />
+
                         <TextView
                             style="@style/nunito_table_cell"
-                            android:text="transferencia de beneficios generados por el plan de\n lealtad o app"/>
+                            android:layout_width="200dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/privacidad_tabla_celda2" />
+
                         <TextView
                             style="@style/nunito_table_cell"
-                            android:text="No"/>
+                            android:layout_width="140dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/privacidad_tabla_celda5" />
+
                     </TableRow>
+
                     <TableRow>
+
                         <TextView
                             style="@style/nunito_table_cell"
-                            android:text="Intercambio de información personal del usuario con
-                            \nlos clientes del plan de lealtad o app"/>
+                            android:layout_width="200dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/privacidad_tabla_celda3" />
+
                         <TextView
                             style="@style/nunito_table_cell"
-                            android:text="Generar valor a los clientes del plan de lealtad
-                            \ndeterminando habitos de consumo y perfiles del consumidor"/>
+                            android:layout_width="200dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/privacidad_tabla_celda4" />
+
                         <TextView
                             style="@style/nunito_table_cell"
-                            android:text="No"/>
+                            android:layout_width="140dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/privacidad_tabla_celda5" />
+
                     </TableRow>
+
                 </TableLayout>
+
             </HorizontalScrollView>
+
             <TextView
                 style="@style/nunito_texto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/privacidad_texto_03b"/>
+                android:text="@string/privacidad_texto_03b" />
+
             <!--SECCION 04-->
             <TextView
                 style="@style/nunito_subtitulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/privacidad_texto_04_subtitulo"/>
+                android:text="@string/privacidad_texto_04_subtitulo" />
+
             <TextView
                 style="@style/nunito_texto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/privacidad_texto_04"/>
+                android:text="@string/privacidad_texto_04" />
+
             <!--SECCION 05-->
             <TextView
                 style="@style/nunito_subtitulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/privacidad_texto_05_subtitulo"/>
+                android:text="@string/privacidad_texto_05_subtitulo" />
+
             <TextView
                 style="@style/nunito_texto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/privacidad_texto_05"/>
+                android:text="@string/privacidad_texto_05" />
+
             <!--SECCION 06-->
             <TextView
                 style="@style/nunito_subtitulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/privacidad_texto_06_subtitulo"/>
+                android:text="@string/privacidad_texto_06_subtitulo" />
+
             <TextView
                 style="@style/nunito_texto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/privacidad_texto_06"/>
+                android:text="@string/privacidad_texto_06" />
+
             <!--SECCION 07-->
             <TextView
                 style="@style/nunito_subtitulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/privacidad_texto_07_subtitulo"/>
+                android:text="@string/privacidad_texto_07_subtitulo" />
+
             <TextView
                 style="@style/nunito_texto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/privacidad_texto_07"/>
+                android:text="@string/privacidad_texto_07" />
+
             <HorizontalScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <TableLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="6dp"
-                    android:orientation="vertical"
-                    android:background="#000000">
-                <TableRow
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        style="@style/nunito_table_header"
-                        android:text="Destinatario de los datos personales"/>
-                    <TextView
-                        style="@style/nunito_table_header"
-                        android:text="Finalidad"/>
-                </TableRow>
-                <TableRow
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        style="@style/nunito_table_cell"
-                        android:text="Clientes del plan de lealtad o aplicación, pueden ser
-                        \nempresas y marcas de consumo masivo y/o manejadas en los principales
-                        \nautoservicios, así como empresas con puntos de venta de algún producto
-                        \no servicio establecidos formalmente y con emisión de ticket de compra."/>
-                    <TextView
-                        style="@style/nunito_table_cell"
-                        android:text="generar valor a los usuarios del plan de lealtad o app."/>
-                </TableRow>
-            </TableLayout>
+                    android:background="#000000"
+                    android:orientation="vertical">
+
+                    <TableRow>
+
+                        <TextView
+                            style="@style/nunito_table_header"
+                            android:layout_width="300dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/privacidad_tabla_header1" />
+
+                        <TextView
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            style="@style/nunito_table_header"
+                            android:text="@string/privacidad_tabla_header2" />
+
+                    </TableRow>
+
+                    <TableRow>
+
+                        <TextView
+                            style="@style/nunito_table_cell"
+                            android:layout_width="300dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/privacidad_tabla_celda6" />
+
+                        <TextView
+                            style="@style/nunito_table_cell"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:text="@string/privacidad_tabla_celda7" />
+
+                    </TableRow>
+
+                </TableLayout>
+
             </HorizontalScrollView>
+
             <!--SECCION 08-->
             <TextView
                 style="@style/nunito_subtitulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/privacidad_texto_08_subtitulo"/>
+                android:text="@string/privacidad_texto_08_subtitulo" />
+
             <TextView
                 style="@style/nunito_texto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/privacidad_texto_08"/>
+                android:text="@string/privacidad_texto_08" />
+
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>

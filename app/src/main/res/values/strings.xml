@@ -310,7 +310,7 @@
         \n\n&#8226;\t\tCreación de cuenta y perfil de usuario
         \n&#8226;\t\tManejo de información con instituciones bancarias
         \n&#8226;\t\tValidación de autenticidad del usuario respecto al perfil
-        \n&#8226;\t\tAdministración de información solicitada por los clientes de la aplicación respecto delcomportamiento del usuario
+        \n&#8226;\t\tAdministración de información solicitada por los clientes de la aplicación respecto del comportamiento del usuario
         \n&#8226;\t\tMercadotecnia o publicitaria
         \n&#8226;\t\tProspección comercial</string>
     <string name="privacidad_texto_02_subtitulo">\n¿Qué datos personales utilizaremos para estos fines?</string>
@@ -344,7 +344,9 @@
         aplicación; así como oponerse al uso de sus datos personales para fines específicos (Oposición). Estos derechos se conocen como derechos ARCO.
         \n\nPara el ejercicio de cualquiera de los derechos ARCO, usted deberá presentar la solicitud respectiva a través del siguiente medio:
         \n\nA través del perfil registrado, ir a la sección de contacto o asistencia y solicitar el acceso a los
-        derechos ARCO, en el mismo medio digital </string>
+        derechos ARCO, en el mismo medio digital
+        \n\nPara conocer el procedimiento y requisitos para el ejercicio de los derechos ARCO, ponemos a su disposición el siguiente medio:
+        \n\nA través del medio digital o app, ingresando a su perfil, en el menú lateral, en la sección de contacto o asistencia, o a través de un correo electrónico a la dirección de contacto@tradenial.com</string>
     <string name="privacidad_texto_05_subtitulo">\nUsted puede revocar su consentimiento para el uso de sus datos personales</string>
     <string name="privacidad_texto_05">Usted puede revocar el consentimiento que, en su caso, nos haya otorgado para el tratamiento de
         sus datos personales. Sin embargo, es importante que tenga en cuenta que no en todos los casos podremos atender su solicitud o concluir el uso de forma inmediata, ya que es posible que por
@@ -394,6 +396,17 @@
         o en el pie de página del sitio web www.shingshing.com.
 
         \n\nÚltima actualización: 05/11/2019</string>
+
+    <string name="privacidad_tabla_header1">Destinatario de los datos personales</string>
+    <string name="privacidad_tabla_header2">Finalidad</string>
+    <string name="privacidad_tabla_header3">Requiere del consentimiento</string>
+    <string name="privacidad_tabla_celda1">Instituciones bancarias</string>
+    <string name="privacidad_tabla_celda2">transferencia de beneficios generados por el plan de lealtad o app</string>
+    <string name="privacidad_tabla_celda3">Intercambio de información personal del usuario con los clientes del plan de lealtad o app</string>
+    <string name="privacidad_tabla_celda4">Generar valor a los clientes del plan de lealtad determinando habitos de consumo y perfiles del consumidor</string>
+    <string name="privacidad_tabla_celda5">No</string>
+    <string name="privacidad_tabla_celda6">Clientes del plan de lealtad o aplicación, pueden serempresas y marcas de consumo masivo y/o manejadas en los principales autoservicios, así como empresas con puntos de venta de algún producto o servicio establecidos formalmente y con emisión de ticket de compra.</string>
+    <string name="privacidad_tabla_celda7">generar valor a los usuarios del plan de lealtad o app.</string>
 
     <!--**************** Privacidad ****************-->
     <string name="terminos_title">Terminos</string>
