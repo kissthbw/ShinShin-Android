@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
 import android.text.Editable;
+import android.text.InputFilter;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 
 import com.getbouncer.cardscan.CreditCard;
 import com.getbouncer.cardscan.ScanActivity;
@@ -185,9 +187,15 @@ public class NuevaTarjetaFragment extends Fragment implements EliminarDialogList
                 if(tipoCuenta.equalsIgnoreCase("tarjeta")) {
                     binding.ivBancariaCamara.setVisibility(View.VISIBLE);
                     binding.tvBancariaTituloNuevo.setText(R.string.nuevo_title_no_tarjeta);
+                    setEditTextMaxLength(binding.etBancariaNumero, 16);
                 } else {
-                    binding.ivBancariaCamara.setVisibility(View.INVISIBLE);
+                    binding.ivBancariaCamara.setVisibility(View.GONE);
                     binding.tvBancariaTituloNuevo.setText(tipoCuenta.equalsIgnoreCase("tarjeta") ? R.string.nuevo_title_no_tarjeta : R.string.nuevo_title_clabe);
+                    if (tipoCuenta.equalsIgnoreCase("cuenta")) {
+                        setEditTextMaxLength(binding.etBancariaNumero, 11);
+                    } else {
+                        setEditTextMaxLength(binding.etBancariaNumero, 18);
+                    }
                 }
             }
 
@@ -196,6 +204,12 @@ public class NuevaTarjetaFragment extends Fragment implements EliminarDialogList
         });
 
         binding.btnBancariaGuardar.setOnClickListener(v -> obtenerDatos());
+    }
+
+    private void setEditTextMaxLength(EditText editText, int length) {
+        InputFilter[] FilterArray = new InputFilter[1];
+        FilterArray[0] = new InputFilter.LengthFilter(length);
+        editText.setFilters(FilterArray);
     }
 
     private int getPositionTipo() {

@@ -1,8 +1,13 @@
 package com.supermarket.shingshing.main.ocr;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
+import androidx.transition.AutoTransition;
+import androidx.transition.Transition;
+import androidx.transition.TransitionListenerAdapter;
+import androidx.transition.TransitionManager;
 
 import android.content.Context;
 import android.content.ContextWrapper;
@@ -11,6 +16,7 @@ import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.supermarket.shingshing.R;
@@ -125,6 +131,26 @@ public class CameraActivity extends AppCompatActivity {
         binding.ivCameraPreview.setVisibility(View.VISIBLE);
 
         preview.setImageBitmap(bitmap);
+        animar(true);
+    }
+
+    private void animar(boolean expand) {
+        AutoTransition transition = new AutoTransition();
+        transition.addListener(new TransitionListenerAdapter(){
+            @Override
+            public void onTransitionStart(@NonNull Transition transition) {}
+            @Override
+            public void onTransitionEnd(@NonNull Transition transition) {
+                if (expand) {
+                    animar(false);
+                }
+            }
+        });
+        TransitionManager.beginDelayedTransition(binding.parent, transition);
+        ViewGroup.LayoutParams layoutParams = binding.clCameraPreview.getLayoutParams();
+        int height = binding.clCameraPreview.getHeight();
+        layoutParams.height = expand ? height + 100 : height - 100;
+        binding.clCameraPreview.requestLayout();
     }
 
     private void mostrarPreview() {
